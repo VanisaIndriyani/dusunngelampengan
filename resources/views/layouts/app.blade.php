@@ -129,6 +129,41 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
         }
+        
+        /* Mobile Button Improvements */
+        @media (max-width: 768px) {
+            .btn-lg {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .btn {
+                font-weight: 600;
+                border-radius: 8px;
+            }
+            
+            .d-flex.flex-column.flex-sm-row {
+                flex-direction: column !important;
+                gap: 0.75rem;
+            }
+            
+            .d-flex.flex-column.flex-sm-row .btn {
+                width: 100%;
+                margin-bottom: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .btn-lg {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .btn {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+        }
 
         /* Custom Components */
         .hero-section {
@@ -180,6 +215,45 @@
         .min-vh-75 {
             min-height: 75vh;
         }
+        
+        /* Mobile Hero Improvements */
+        @media (max-width: 768px) {
+            .min-vh-75 {
+                min-height: 60vh;
+            }
+            
+            .hero-section {
+                padding: 3rem 0 2rem 0;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .hero-badge {
+                margin-bottom: 2rem;
+            }
+            
+            .hero-badge .badge {
+                font-size: 0.9rem;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .min-vh-75 {
+                min-height: 50vh;
+            }
+            
+            .hero-section {
+                padding: 2rem 0 1.5rem 0;
+            }
+            
+            .hero-badge .badge {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+        }
 
         .feature-card {
             background: var(--white);
@@ -208,6 +282,47 @@
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Mobile Feature Card Improvements */
+        @media (max-width: 768px) {
+            .feature-card {
+                margin-bottom: 1.5rem;
+                padding: 1.5rem !important;
+            }
+            
+            .feature-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+            
+            .feature-card h4,
+            .feature-card h5 {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .feature-card p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .feature-card {
+                padding: 1rem !important;
+                margin-bottom: 1rem;
+            }
+            
+            .feature-card h4,
+            .feature-card h5 {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .feature-card p {
+                font-size: 0.85rem;
+            }
         }
 
         .feature-icon {
@@ -245,6 +360,37 @@
             font-weight: 700;
             color: var(--white);
             margin-bottom: 0.5rem;
+        }
+        
+        /* Mobile Stats Improvements */
+        @media (max-width: 768px) {
+            .stats-card {
+                padding: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .stats-number {
+                font-size: 2.5rem;
+            }
+            
+            .stats-label {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .stats-card {
+                padding: 1rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .stats-number {
+                font-size: 2rem;
+            }
+            
+            .stats-label {
+                font-size: 0.8rem;
+            }
         }
 
         .stats-label {
@@ -372,7 +518,7 @@
             padding: 4px;
         }
 
-        .logo-fallback {
+        .logo-fallback, .kkn-logo-fallback, .ugm-logo-fallback {
             font-size: 1.5rem;
             color: var(--white);
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
@@ -416,6 +562,10 @@
             .brand-subtitle {
                 font-size: 0.6rem;
             }
+            
+            .navbar-brand {
+                padding: 0.5rem 0;
+            }
         }
 
         @media (max-width: 576px) {
@@ -424,11 +574,37 @@
             }
             
             .brand-title {
-                font-size: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .brand-subtitle {
+                font-size: 0.5rem;
             }
             
             .navbar-logo.me-3 {
                 margin-right: 0.5rem !important;
+            }
+            
+            .navbar-brand {
+                padding: 0.25rem 0;
+            }
+            
+            .navbar {
+                padding: 0.5rem 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .brand-title {
+                font-size: 0.8rem;
+            }
+            
+            .brand-subtitle {
+                display: none;
+            }
+            
+            .logo-bantul, .logo-kelompok {
+                height: 25px;
             }
         }
 
@@ -444,6 +620,54 @@
         .navbar-nav .nav-link.active {
             color: var(--primary-blue) !important;
             background: var(--secondary-blue);
+        }
+        
+        /* Mobile Navigation Improvements */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: var(--white);
+                border-radius: 10px;
+                margin-top: 1rem;
+                padding: 1rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+            
+            .navbar-nav {
+                gap: 0.5rem;
+            }
+            
+            .navbar-nav .nav-link {
+                text-align: center;
+                padding: 0.75rem 1rem !important;
+                margin: 0.25rem 0;
+                border-radius: 10px;
+                font-weight: 600;
+            }
+            
+                    .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background: var(--primary-blue);
+            color: var(--white) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        /* Mobile Toggle Button */
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+            border-radius: 8px;
+            background: var(--light-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(37, 99, 235, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
         }
 
         .footer {
@@ -688,6 +912,11 @@
 
         /* Responsive Footer */
         @media (max-width: 768px) {
+            .footer {
+                text-align: center;
+                padding: 2rem 0;
+            }
+            
             .footer-logo {
                 width: 40px;
                 height: 40px;
@@ -700,12 +929,14 @@
             
             .social-links {
                 justify-content: center;
+                margin: 1rem 0;
             }
             
             .contact-item {
                 flex-direction: column;
                 text-align: center;
                 gap: 0.5rem;
+                margin-bottom: 1rem;
             }
             
             .contact-icon {
@@ -714,11 +945,42 @@
             
             .footer-bottom {
                 text-align: center;
+                margin-top: 1.5rem;
+                padding-top: 1rem;
             }
             
             .footer-bottom .text-md-end {
                 text-align: center !important;
                 margin-top: 1rem;
+            }
+            
+            .footer h5 {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .footer p {
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer {
+                padding: 1.5rem 0;
+            }
+            
+            .footer h5 {
+                font-size: 1rem;
+            }
+            
+            .footer p {
+                font-size: 0.85rem;
+            }
+            
+            .footer-bottom {
+                margin-top: 1rem;
+                padding-top: 0.75rem;
             }
         }
 
@@ -786,11 +1048,296 @@
                 height: 60px;
                 font-size: 1.5rem;
             }
+            
+            /* Mobile Navigation */
+            .navbar-nav {
+                text-align: center;
+                padding: 1rem 0;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 0.75rem 1rem !important;
+                margin: 0.25rem 0;
+                border-radius: 10px;
+            }
+            
+            /* Mobile Hero Section */
+            .hero-section {
+                padding: 2rem 0 !important;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem !important;
+                line-height: 1.2;
+            }
+            
+            .hero-section .lead {
+                font-size: 1rem !important;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.75rem 1rem;
+                background: rgba(255,255,255,0.1);
+                border-radius: 10px;
+                backdrop-filter: blur(10px);
+            }
+            
+            /* Mobile Buttons */
+            .btn-lg {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .d-flex.flex-column.flex-sm-row {
+                flex-direction: column !important;
+            }
+            
+            .d-flex.flex-column.flex-sm-row .btn {
+                margin-bottom: 0.5rem;
+                width: 100%;
+            }
+            
+            /* Mobile Cards */
+            .feature-card {
+                margin-bottom: 1rem;
+            }
+            
+            .feature-card h4, .feature-card h5 {
+                font-size: 1.1rem;
+            }
+            
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+            
+            /* Mobile Stats */
+            .stats-card {
+                padding: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .stats-number {
+                font-size: 2rem;
+            }
+            
+            /* Mobile Footer */
+            .footer {
+                text-align: center;
+            }
+            
+            .footer .text-md-end {
+                text-align: center !important;
+                margin-top: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            /* Extra Small Mobile */
+            .hero-section h1 {
+                font-size: 1.75rem !important;
+            }
+            
+            .hero-section .lead {
+                font-size: 0.9rem !important;
+            }
+            
+            .hero-badge .badge {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .section-badge .badge {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .display-4 {
+                font-size: 1.75rem;
+            }
+            
+            .display-3 {
+                font-size: 2rem;
+            }
+            
+            .btn-lg {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+            
+            .stats-card {
+                padding: 1rem;
+            }
+            
+            .stats-number {
+                font-size: 1.75rem;
+            }
+            
+            .navbar-brand .brand-title {
+                font-size: 0.9rem;
+            }
+            
+            .navbar-brand .brand-subtitle {
+                font-size: 0.5rem;
+            }
+            
+            /* Container padding for mobile */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Mobile spacing */
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            
+            .mb-5 {
+                margin-bottom: 2rem !important;
+            }
+            
+            .mt-5 {
+                margin-top: 2rem !important;
+            }
         }
 
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
+        }
+        
+        /* Mobile Touch Improvements */
+        @media (max-width: 768px) {
+            /* Ensure touch targets are at least 44px */
+            .btn, .nav-link, .navbar-toggler {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Improve touch feedback */
+            .btn:active, .nav-link:active {
+                transform: scale(0.95);
+            }
+            
+            /* Better scrolling on mobile */
+            body {
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            /* Prevent zoom on input focus */
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Mobile Container and Spacing Improvements */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .py-5 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            
+            .mb-5 {
+                margin-bottom: 3rem !important;
+            }
+            
+            .mt-5 {
+                margin-top: 3rem !important;
+            }
+            
+            .section-badge {
+                margin-bottom: 2rem;
+            }
+            
+            .display-4 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .display-3 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            
+            .mb-5 {
+                margin-bottom: 2rem !important;
+            }
+            
+            .mt-5 {
+                margin-top: 2rem !important;
+            }
+            
+            .section-badge {
+                margin-bottom: 1.5rem;
+            }
+            
+            .display-4 {
+                font-size: 1.75rem;
+            }
+            
+            .display-3 {
+                font-size: 2rem;
+            }
+            
+            .lead {
+                font-size: 1rem !important;
+            }
+            
+            /* Mobile Grid Improvements */
+            .row {
+                margin-left: -0.5rem;
+                margin-right: -0.5rem;
+            }
+            
+            .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+            .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+            
+            /* Mobile spacing utilities */
+            .g-3 {
+                gap: 1rem !important;
+            }
+            
+            .g-4 {
+                gap: 1rem !important;
+            }
+            
+            .g-5 {
+                gap: 1rem !important;
+            }
         }
 
         /* Video Section */
@@ -935,6 +1482,50 @@
                 transform: translateY(-20px);
             }
         }
+        
+        /* Mobile Performance Optimizations */
+        @media (max-width: 768px) {
+            /* Reduce animations on mobile for better performance */
+            .feature-card:hover {
+                transform: translateY(-3px);
+                transition: transform 0.2s ease;
+            }
+            
+            /* Optimize shadows for mobile */
+            .feature-card {
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            }
+            
+            .feature-card:hover {
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            }
+            
+            /* Reduce complex gradients on mobile */
+            .hero-section::before {
+                opacity: 0.1;
+            }
+            
+            /* Optimize text rendering */
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                text-rendering: optimizeLegibility;
+            }
+        }
+        
+        /* Touch Device Optimizations */
+        .touch-device .btn,
+        .touch-device .nav-link {
+            -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+        }
+        
+        .touch-device .feature-card:hover {
+            transform: none;
+        }
+        
+        .touch-device .feature-card:active {
+            transform: scale(0.98);
+        }
     </style>
 </head>
 <body>
@@ -945,12 +1536,12 @@
                 <div class="d-flex align-items-center">
                     <!-- Logo Kabupaten Bantul -->
                     <div class="navbar-logo me-2">
-                        <img src="/images/logos/logo_bantul.png" alt="Logo Kabupaten Bantul" class="logo-bantul" onerror="this.style.display='none'">
+                        <img src="{{ asset('images/logos/logo_bantul.png') }}" alt="Logo Kabupaten Bantul" class="logo-bantul" onerror="this.style.display='none'">
                         <i class="fas fa-shield-alt logo-fallback" style="display: none;"></i>
                     </div>
                     <!-- Logo Kelompok KKN -->
                     <div class="navbar-logo me-3">
-                        <img src="/images/logos/logo_kelompok.png" alt="Logo Kelompok KKN" class="logo-kelompok" onerror="this.style.display='none'">
+                        <img src="{{ asset('images/logos/logo_kelompok.png') }}" alt="Logo Kelompok KKN" class="logo-kelompok" onerror="this.style.display='none'">
                         <i class="fas fa-users logo-fallback" style="display: none;"></i>
                     </div>
                     <div class="brand-text">
@@ -960,7 +1551,7 @@
                 </div>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -968,27 +1559,22 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('home') || request()->routeIs('beranda') ? 'active' : '' }}" href="{{ route('beranda') }}">
-                            Beranda
+                            <i class="fas fa-home d-lg-none me-2"></i>Beranda
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('umkm') ? 'active' : '' }}" href="{{ route('umkm') }}">
-                            UMKM
+                            <i class="fas fa-store d-lg-none me-2"></i>UMKM
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">
-                            Tentang Kami
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('qr-scanner') ? 'active' : '' }}" href="{{ route('qr-scanner') }}">
-                            <i class="fas fa-qrcode me-1"></i>QR Scanner
+                            <i class="fas fa-info-circle d-lg-none me-2"></i>Tentang Kami
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.dashboard') }}" target="_blank">
-                            <i class="fas fa-cog me-1"></i>Admin
+                            <i class="fas fa-cog me-1"></i><span class="d-none d-lg-inline">Admin</span>
                         </a>
                     </li>
                 </ul>
@@ -1014,6 +1600,22 @@
                     <p class="mb-0">&copy; {{ date('Y') }} Dusun Ngelampengan. Semua hak dilindungi.</p>
                 </div>
             </div>
+            <!-- Mobile Footer -->
+            <div class="row d-md-none mt-3">
+                <div class="col-12 text-center">
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="{{ route('beranda') }}" class="btn btn-outline-light btn-sm">
+                            <i class="fas fa-home me-1"></i>Beranda
+                        </a>
+                        <a href="{{ route('umkm') }}" class="btn btn-outline-light btn-sm">
+                            <i class="fas fa-store me-1"></i>UMKM
+                        </a>
+                        <a href="{{ route('about') }}" class="btn btn-outline-light btn-sm">
+                            <i class="fas fa-info-circle me-1"></i>Tentang
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -1024,7 +1626,7 @@
     <script>
         // Handle logo fallback when images fail to load
         document.addEventListener('DOMContentLoaded', function() {
-            const logoImages = document.querySelectorAll('.logo-bantul, .logo-kelompok');
+            const logoImages = document.querySelectorAll('.logo-bantul, .logo-kelompok, .kkn-logo, .ugm-logo, .logo-img');
             
             logoImages.forEach(function(img) {
                 img.addEventListener('error', function() {
@@ -1032,7 +1634,7 @@
                     this.style.display = 'none';
                     
                     // Show the fallback icon
-                    const fallback = this.parentElement.querySelector('.logo-fallback');
+                    const fallback = this.parentElement.querySelector('.logo-fallback, .kkn-logo-fallback, .ugm-logo-fallback');
                     if (fallback) {
                         fallback.style.display = 'flex';
                     }
@@ -1042,12 +1644,54 @@
                 if (img.complete && img.naturalHeight === 0) {
                     // Image failed to load
                     img.style.display = 'none';
-                    const fallback = img.parentElement.querySelector('.logo-fallback');
+                    const fallback = img.parentElement.querySelector('.logo-fallback, .kkn-logo-fallback, .ugm-logo-fallback');
                     if (fallback) {
                         fallback.style.display = 'flex';
                     }
                 }
             });
+            
+            // Mobile navigation improvements
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            
+            if (navbarToggler && navbarCollapse) {
+                // Close mobile menu when clicking on a link
+                const navLinks = navbarCollapse.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth < 992) {
+                            navbarCollapse.classList.remove('show');
+                        }
+                    });
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                });
+            }
+            
+            // Add smooth scrolling for mobile
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile) {
+                document.documentElement.style.scrollBehavior = 'smooth';
+            }
+            
+            // Optimize touch interactions
+            if ('ontouchstart' in window) {
+                document.body.classList.add('touch-device');
+            }
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (window.innerWidth >= 992 && navbarCollapse) {
+                navbarCollapse.classList.remove('show');
+            }
         });
     </script>
 

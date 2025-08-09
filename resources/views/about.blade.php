@@ -3,6 +3,563 @@
 @section('title', 'Tentang Kami - Dusun Ngelampengan')
 
 @section('content')
+    <!-- Mobile Responsive CSS -->
+    <style>
+        /* Mobile Hero Section */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 3rem 0 2rem 0 !important;
+                min-height: 60vh !important;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem !important;
+                line-height: 1.2;
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .hero-section .lead {
+                font-size: 1rem !important;
+                margin-bottom: 2rem !important;
+            }
+            
+            .hero-badge .badge {
+                font-size: 0.9rem !important;
+                padding: 0.75rem 1.5rem !important;
+            }
+            
+            .hero-stats {
+                flex-direction: column !important;
+                gap: 1rem !important;
+                margin-top: 2rem !important;
+            }
+            
+            .stat-item {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 0.75rem 1rem !important;
+                background: rgba(255,255,255,0.1) !important;
+                border-radius: 10px !important;
+                backdrop-filter: blur(10px) !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .stat-item .fw-bold {
+                font-size: 1.5rem !important;
+            }
+            
+            .stat-item small {
+                font-size: 0.8rem !important;
+            }
+            
+            .btn-lg {
+                padding: 0.75rem 1.5rem !important;
+                font-size: 0.9rem !important;
+                width: 100% !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .d-flex.flex-column.flex-sm-row {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 2rem 0 1.5rem 0 !important;
+                min-height: 50vh !important;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.75rem !important;
+            }
+            
+            .hero-section .lead {
+                font-size: 0.9rem !important;
+            }
+            
+            .hero-badge .badge {
+                font-size: 0.8rem !important;
+                padding: 0.5rem 1rem !important;
+            }
+            
+            .btn-lg {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.85rem !important;
+            }
+            
+            .stat-item {
+                padding: 0.5rem 0.75rem !important;
+            }
+            
+            .stat-item .fw-bold {
+                font-size: 1.25rem !important;
+            }
+            
+            .stat-item small {
+                font-size: 0.75rem !important;
+            }
+        }
+        
+        /* Mobile History Section */
+        @media (max-width: 768px) {
+            .bg-light-green {
+                background-color: #f8f9fa !important;
+            }
+            
+            .col-lg-6 {
+                margin-bottom: 2rem !important;
+            }
+            
+            .pe-lg-5 {
+                padding-right: 0 !important;
+            }
+            
+            .display-4 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            .lead {
+                font-size: 1rem !important;
+            }
+            
+            .section-badge .badge {
+                font-size: 0.9rem !important;
+                padding: 0.75rem 1.5rem !important;
+            }
+            
+            /* Stats Grid Mobile */
+            .stats-grid {
+                gap: 0.75rem !important;
+            }
+            
+            .stats-card {
+                height: 120px !important;
+                padding: 0.75rem !important;
+            }
+            
+            .stats-number {
+                font-size: 1.5rem !important;
+                line-height: 1.2 !important;
+                margin: 0.25rem 0 !important;
+            }
+            
+            .stats-label {
+                font-size: 0.8rem !important;
+                line-height: 1.3 !important;
+                margin: 0 !important;
+            }
+            
+            .stats-icon {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .display-4 {
+                font-size: 1.75rem !important;
+            }
+            
+            .lead {
+                font-size: 0.9rem !important;
+            }
+            
+            .section-badge .badge {
+                font-size: 0.8rem !important;
+                padding: 0.5rem 1rem !important;
+            }
+            
+            /* Stats Grid Small Mobile */
+            .stats-grid {
+                gap: 0.5rem !important;
+            }
+            
+            .stats-card {
+                height: 100px !important;
+                padding: 0.5rem !important;
+            }
+            
+            .stats-number {
+                font-size: 1.25rem !important;
+                margin: 0.2rem 0 !important;
+            }
+            
+            .stats-label {
+                font-size: 0.7rem !important;
+            }
+            
+            .stats-icon {
+                width: 35px !important;
+                height: 35px !important;
+                font-size: 0.9rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Stats Grid Extra Small Mobile */
+            .stats-grid {
+                gap: 0.25rem !important;
+            }
+            
+            .stats-card {
+                height: 90px !important;
+                padding: 0.4rem !important;
+            }
+            
+            .stats-number {
+                font-size: 1.1rem !important;
+                margin: 0.15rem 0 !important;
+            }
+            
+            .stats-label {
+                font-size: 0.65rem !important;
+            }
+            
+            .stats-icon {
+                width: 30px !important;
+                height: 30px !important;
+                font-size: 0.8rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+        }
+        
+        /* Mobile Container and Spacing */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .py-5 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            
+            .mb-5 {
+                margin-bottom: 3rem !important;
+            }
+            
+            .mt-5 {
+                margin-top: 2rem !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+            
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            
+            .mb-5 {
+                margin-bottom: 2rem !important;
+            }
+            
+            .mt-5 {
+                margin-top: 1.5rem !important;
+            }
+        }
+        
+        /* Mobile Grid Improvements */
+        @media (max-width: 768px) {
+            .row {
+                margin-left: -0.5rem !important;
+                margin-right: -0.5rem !important;
+            }
+            
+            .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+            .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            
+            /* Stats cards specific improvements */
+            .col-6 {
+                padding-left: 0.25rem !important;
+                padding-right: 0.25rem !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .col-6 {
+                padding-left: 0.125rem !important;
+                padding-right: 0.125rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .col-6 {
+                padding-left: 0.1rem !important;
+                padding-right: 0.1rem !important;
+            }
+        }
+        
+        /* Mobile Touch Improvements */
+        @media (max-width: 768px) {
+            .btn, .nav-link {
+                min-height: 44px !important;
+                min-width: 44px !important;
+            }
+            
+            .btn:active, .nav-link:active {
+                transform: scale(0.95) !important;
+            }
+            
+            body {
+                -webkit-overflow-scrolling: touch !important;
+            }
+        }
+        
+        /* Stats Grid Layout */
+        .stats-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1rem !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        
+        /* Ensure grid items are responsive */
+        .stats-item {
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+        
+        .stats-item .stats-card {
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 120px !important;
+        }
+        
+        .stats-item {
+            width: 100% !important;
+        }
+        
+        /* Stats Cards Base Styling */
+        .stats-card {
+            background: var(--white) !important;
+            border-radius: 15px !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08) !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+            overflow: hidden !important;
+            position: relative !important;
+            height: 140px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            padding: 1rem !important;
+        }
+        
+        .stats-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            height: 3px !important;
+            background: linear-gradient(90deg, 
+                var(--gradient-blue-1), 
+                var(--gradient-blue-2), 
+                var(--gradient-blue-3), 
+                var(--gradient-blue-4)) !important;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+        }
+        
+        .stats-icon {
+            width: 50px !important;
+            height: 50px !important;
+            background: rgba(59, 130, 246, 0.1) !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 auto 0.5rem auto !important;
+            font-size: 1.25rem !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .stats-card:hover .stats-icon {
+            transform: scale(1.1) !important;
+            background: rgba(59, 130, 246, 0.2) !important;
+        }
+        
+        .stats-number {
+            font-weight: 700 !important;
+            margin: 0.25rem 0 !important;
+            line-height: 1.2 !important;
+            font-size: 1.75rem !important;
+        }
+        
+        .stats-label {
+            font-weight: 500 !important;
+            opacity: 0.8 !important;
+            line-height: 1.3 !important;
+            font-size: 0.85rem !important;
+            margin: 0 !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+        
+
+        
+        /* Desktop specific adjustments */
+        @media (min-width: 769px) {
+            .stats-grid {
+                gap: 1.5rem !important;
+            }
+            
+            .stats-card {
+                height: 160px !important;
+                padding: 1.5rem !important;
+            }
+            
+            .stats-number {
+                font-size: 2rem !important;
+            }
+            
+            .stats-label {
+                font-size: 0.9rem !important;
+            }
+            
+            .stats-icon {
+                width: 60px !important;
+                height: 60px !important;
+                font-size: 1.5rem !important;
+            }
+        }
+        
+        /* Tablet specific adjustments */
+        @media (min-width: 577px) and (max-width: 768px) {
+            .stats-grid {
+                gap: 1rem !important;
+            }
+            
+            .stats-card {
+                height: 140px !important;
+                padding: 1rem !important;
+            }
+            
+            .stats-number {
+                font-size: 1.75rem !important;
+            }
+            
+            .stats-label {
+                font-size: 0.85rem !important;
+            }
+            
+            .stats-icon {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.25rem !important;
+            }
+        }
+        
+        /* Extra Small Mobile Optimizations */
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 1.5rem 0 1rem 0 !important;
+                min-height: 45vh !important;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.5rem !important;
+            }
+            
+            .hero-section .lead {
+                font-size: 0.85rem !important;
+            }
+            
+            .btn-lg {
+                padding: 0.5rem 0.75rem !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .display-4 {
+                font-size: 1.5rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            .lead {
+                font-size: 0.9rem !important;
+            }
+            
+            .container {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+        }
+        
+        /* Landscape Mobile Optimizations */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero-section {
+                min-height: 40vh !important;
+                padding: 1rem 0 !important;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .hero-section .lead {
+                font-size: 0.9rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .hero-stats {
+                margin-top: 1rem !important;
+            }
+            
+            .py-5 {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+            
+            /* Stats Grid Landscape */
+            .stats-grid {
+                gap: 0.5rem !important;
+            }
+            
+            .stats-card {
+                height: 100px !important;
+                padding: 0.5rem !important;
+            }
+            
+            .stats-number {
+                font-size: 1.25rem !important;
+                margin: 0.2rem 0 !important;
+            }
+            
+            .stats-label {
+                font-size: 0.7rem !important;
+                margin: 0 !important;
+            }
+            
+            .stats-icon {
+                width: 35px !important;
+                height: 35px !important;
+                font-size: 0.9rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+        }
+    </style>
     <!-- Hero Section -->
     <section class="hero-section text-white py-5 position-relative overflow-hidden">
         <div class="hero-bg-overlay"></div>
@@ -88,41 +645,43 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="row g-4">
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="stats-card text-center p-4 hover-lift">
-                                <div class="stats-icon mb-3">
+                <div class="col-lg-6 col-md-12" data-aos="fade-left">
+                    <div class="stats-grid">
+                        <!-- Row 1: Tahun Sejarah & Penduduk -->
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-calendar text-primary"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-2 text-primary counter" data-target="100">0</div>
+                                <div class="stats-number fw-bold text-primary counter" data-target="100">0</div>
                                 <div class="stats-label text-muted">Tahun Sejarah</div>
                             </div>
                         </div>
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="stats-card text-center p-4 hover-lift">
-                                <div class="stats-icon mb-3">
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-users text-success"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-2 text-success counter" data-target="500">0</div>
+                                <div class="stats-number fw-bold text-success counter" data-target="500">0</div>
                                 <div class="stats-label text-muted">Penduduk</div>
                             </div>
                         </div>
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="stats-card text-center p-4 hover-lift">
-                                <div class="stats-icon mb-3">
+                        <!-- Row 2: UMKM Aktif & Hektar Lahan -->
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-store text-warning"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-2 text-warning counter" data-target="50">0</div>
+                                <div class="stats-number fw-bold text-warning counter" data-target="50">0</div>
                                 <div class="stats-label text-muted">UMKM Aktif</div>
                             </div>
                         </div>
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="400">
-                            <div class="stats-card text-center p-4 hover-lift">
-                                <div class="stats-icon mb-3">
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-map text-info"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-2 text-info counter" data-target="1000">0</div>
+                                <div class="stats-number fw-bold text-info counter" data-target="1000">0</div>
                                 <div class="stats-label text-muted">Hektar Lahan</div>
                             </div>
                         </div>
@@ -490,14 +1049,14 @@
                             <div class="d-flex justify-content-center align-items-center mb-4">
                                 <!-- Logo KKN -->
                                 <div class="me-4">
-                                    <img src="/images/logos/logo-kkn.png" alt="Logo KKN UMBY" class="kkn-logo" onerror="this.style.display='none'">
+                                    <img src="{{ asset('images/logos/logo_kelompok.png') }}" alt="Logo KKN UMBY" class="kkn-logo" onerror="this.style.display='none'">
                                     <div class="kkn-logo-fallback" style="display: none;">
                                         <i class="fas fa-users-cog"></i>
                                     </div>
                                 </div>
                                 <!-- Logo UMBY -->
                                 <div>
-                                    <img src="/images/logos/logo-umby.png" alt="Logo UMBY" class="ugm-logo" onerror="this.style.display='none'">
+                                    <img src="{{ asset('images/logos/logo_bantul.png') }}" alt="Logo UMBY" class="ugm-logo" onerror="this.style.display='none'">
                                     <div class="ugm-logo-fallback" style="display: none;">
                                         <i class="fas fa-university"></i>
                                     </div>
@@ -770,6 +1329,40 @@
                 font-size: 1.5rem;
             }
         }
+        
+        /* Touch Device Optimizations */
+        .touch-device .btn,
+        .touch-device .nav-link {
+            -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+        }
+        
+        .touch-device .feature-card:hover,
+        .touch-device .stats-card:hover {
+            transform: none;
+        }
+        
+        .touch-device .feature-card:active,
+        .touch-device .stats-card:active {
+            transform: scale(0.98);
+        }
+        
+        /* Ensure proper spacing for fixed navbar */
+        main {
+            margin-top: 76px !important;
+            padding-top: 0 !important;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                margin-top: 70px !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            main {
+                margin-top: 65px !important;
+            }
+        }
     </style>
 
     <!-- JavaScript for animations and interactions -->
@@ -844,6 +1437,48 @@
             scrollTimeout = setTimeout(() => {
                 // Handle scroll-based animations here if needed
             }, 16);
+        });
+        
+        // Mobile optimizations
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+        
+        // Adjust AOS settings for mobile
+        if (isMobile()) {
+            AOS.init({
+                duration: 600,
+                easing: 'ease-out',
+                once: true,
+                offset: 50,
+                disable: 'phone'
+            });
+        }
+        
+        // Handle mobile touch events
+        if ('ontouchstart' in window) {
+            document.body.classList.add('touch-device');
+            
+            // Optimize touch interactions
+            document.querySelectorAll('.btn, .nav-link, .feature-card, .stats-card').forEach(element => {
+                element.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                element.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
+            });
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (isMobile()) {
+                // Mobile-specific adjustments
+                document.querySelectorAll('.animate__animated').forEach(element => {
+                    element.style.animationDuration = '0.6s';
+                });
+            }
         });
 
         // Handle KKN logo fallback

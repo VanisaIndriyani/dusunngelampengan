@@ -52,6 +52,957 @@
             </div>
         </div>
     </section>
+    
+    <!-- Mobile Responsive CSS -->
+    <style>
+        /* Ensure navbar consistency across all pages */
+        .navbar {
+            background: var(--white) !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+            z-index: 1030 !important;
+        }
+        
+        .navbar-brand {
+            font-weight: 700 !important;
+            color: var(--primary-blue) !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-gray) !important;
+            font-weight: 500 !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 8px !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary-blue) !important;
+            background: var(--secondary-blue) !important;
+        }
+        
+        /* Mobile Navigation Improvements */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: var(--white) !important;
+                border-radius: 10px !important;
+                margin-top: 1rem !important;
+                padding: 1rem !important;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
+            }
+            
+            .navbar-nav {
+                gap: 0.5rem !important;
+            }
+            
+            .navbar-nav .nav-link {
+                text-align: center !important;
+                padding: 0.75rem 1rem !important;
+                margin: 0.25rem 0 !important;
+                border-radius: 10px !important;
+                font-weight: 600 !important;
+            }
+            
+            .navbar-nav .nav-link:hover,
+            .navbar-nav .nav-link.active {
+                background: var(--primary-blue) !important;
+                color: var(--white) !important;
+                transform: translateY(-2px) !important;
+                box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3) !important;
+            }
+        }
+        
+        /* Mobile Toggle Button */
+        .navbar-toggler {
+            border: none !important;
+            padding: 0.5rem !important;
+            border-radius: 8px !important;
+            background: var(--light-blue) !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25) !important;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(37, 99, 235, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+        
+        /* Logo Styling */
+        .navbar-logo {
+            position: relative !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        .logo-bantul, .logo-kelompok {
+            height: 40px !important;
+            width: auto !important;
+            object-fit: contain !important;
+            border-radius: 8px !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .logo-bantul {
+            background: linear-gradient(135deg, #ffd700, #ffed4e) !important;
+            padding: 4px !important;
+        }
+        
+        .logo-kelompok {
+            background: linear-gradient(135deg, #1e40af, #3b82f6) !important;
+            padding: 4px !important;
+        }
+        
+        .brand-text {
+            display: flex !important;
+            flex-direction: column !important;
+            line-height: 1.2 !important;
+        }
+        
+        .brand-title {
+            font-weight: 700 !important;
+            font-size: 1.3rem !important;
+            color: var(--primary-blue) !important;
+        }
+        
+        .brand-subtitle {
+            font-size: 0.7rem !important;
+            color: var(--gray) !important;
+            font-weight: 500 !important;
+        }
+        
+        /* Responsive logo adjustments */
+        @media (max-width: 768px) {
+            .logo-bantul, .logo-kelompok {
+                height: 35px !important;
+            }
+            
+            .brand-title {
+                font-size: 1.1rem !important;
+            }
+            
+            .brand-subtitle {
+                font-size: 0.6rem !important;
+            }
+            
+            .navbar-brand {
+                padding: 0.5rem 0 !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-bantul, .logo-kelompok {
+                height: 30px !important;
+            }
+            
+            .brand-title {
+                font-size: 0.9rem !important;
+            }
+            
+            .brand-subtitle {
+                font-size: 0.5rem !important;
+            }
+            
+            .navbar-logo.me-3 {
+                margin-right: 0.5rem !important;
+            }
+            
+            .navbar-brand {
+                padding: 0.25rem 0 !important;
+            }
+            
+            .navbar {
+                padding: 0.5rem 1rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .brand-title {
+                font-size: 0.8rem !important;
+            }
+            
+            .brand-subtitle {
+                display: none !important;
+            }
+            
+            .logo-bantul, .logo-kelompok {
+                height: 25px !important;
+            }
+        }
+        /* Mobile Hero Section */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 3rem 0 2rem 0 !important;
+                min-height: 60vh !important;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem !important;
+                line-height: 1.2;
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .hero-section .lead {
+                font-size: 1rem !important;
+                margin-bottom: 2rem !important;
+            }
+            
+            .hero-badge .badge {
+                font-size: 0.9rem !important;
+                padding: 0.75rem 1.5rem !important;
+            }
+            
+            .hero-stats {
+                flex-direction: column !important;
+                gap: 1rem !important;
+                margin-top: 2rem !important;
+            }
+            
+            .stat-item {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 0.75rem 1rem !important;
+                background: rgba(255,255,255,0.1) !important;
+                border-radius: 10px !important;
+                backdrop-filter: blur(10px) !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .stat-item .fw-bold {
+                font-size: 1.5rem !important;
+            }
+            
+            .stat-item small {
+                font-size: 0.8rem !important;
+            }
+            
+            .btn-lg {
+                padding: 0.75rem 1.5rem !important;
+                font-size: 0.9rem !important;
+                width: 100% !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .d-flex.flex-column.flex-sm-row {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 2rem 0 1.5rem 0 !important;
+                min-height: 50vh !important;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.75rem !important;
+            }
+            
+            .hero-section .lead {
+                font-size: 0.9rem !important;
+            }
+            
+            .hero-badge .badge {
+                font-size: 0.8rem !important;
+                padding: 0.5rem 1rem !important;
+            }
+            
+            .btn-lg {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.85rem !important;
+            }
+            
+            .stat-item {
+                padding: 0.5rem 0.75rem !important;
+            }
+            
+            .stat-item .fw-bold {
+                font-size: 1.25rem !important;
+            }
+            
+            .stat-item small {
+                font-size: 0.75rem !important;
+            }
+        }
+        
+        /* Mobile Features Section */
+        @media (max-width: 768px) {
+            .feature-card {
+                padding: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .feature-card h4 {
+                font-size: 1.1rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .feature-card p {
+                font-size: 0.9rem !important;
+                line-height: 1.5 !important;
+            }
+            
+            .feature-icon {
+                width: 60px !important;
+                height: 60px !important;
+                font-size: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .display-4 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            .lead {
+                font-size: 1rem !important;
+            }
+            
+            .section-badge .badge {
+                font-size: 0.9rem !important;
+                padding: 0.75rem 1.5rem !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .feature-card {
+                padding: 1rem !important;
+            }
+            
+            .feature-card h4 {
+                font-size: 1rem !important;
+            }
+            
+            .feature-card p {
+                font-size: 0.85rem !important;
+            }
+            
+            .feature-icon {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.25rem !important;
+            }
+            
+            .display-4 {
+                font-size: 1.75rem !important;
+            }
+            
+            .section-badge .badge {
+                font-size: 0.8rem !important;
+                padding: 0.5rem 1rem !important;
+            }
+        }
+        
+        /* Mobile About Section - 2x2 Layout */
+        @media (max-width: 768px) {
+            /* Stats Grid Mobile */
+            .stats-grid {
+                gap: 0.75rem !important;
+            }
+            
+            .stats-card {
+                height: 120px !important;
+                padding: 0.75rem !important;
+            }
+            
+            .stats-number {
+                font-size: 1.5rem !important;
+                line-height: 1.2 !important;
+                margin: 0.25rem 0 !important;
+            }
+            
+            .stats-label {
+                font-size: 0.8rem !important;
+                line-height: 1.3 !important;
+                margin: 0 !important;
+            }
+            
+            .stats-icon {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            /* Stats Grid Small Mobile */
+            .stats-grid {
+                gap: 0.5rem !important;
+            }
+            
+            .stats-card {
+                height: 100px !important;
+                padding: 0.5rem !important;
+            }
+            
+            .stats-number {
+                font-size: 1.25rem !important;
+                line-height: 1.1 !important;
+                margin: 0.2rem 0 !important;
+            }
+            
+            .stats-label {
+                font-size: 0.7rem !important;
+                line-height: 1.2 !important;
+                margin: 0 !important;
+            }
+            
+            .stats-icon {
+                width: 35px !important;
+                height: 35px !important;
+                font-size: 0.9rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-card {
+                padding: 0.5rem !important;
+                height: 90px !important;
+            }
+            
+            .stats-number {
+                font-size: 1.1rem !important;
+                margin: 0.15rem 0 !important;
+            }
+            
+            .stats-label {
+                font-size: 0.65rem !important;
+            }
+            
+            .stats-icon {
+                width: 30px !important;
+                height: 30px !important;
+                font-size: 0.8rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+            
+            /* Stats Grid Extra Small Mobile */
+            .stats-grid {
+                gap: 0.25rem !important;
+            }
+        }
+        
+        /* Mobile Container and Spacing */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .py-5 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            
+            .mb-5 {
+                margin-bottom: 3rem !important;
+            }
+            
+            .mt-5 {
+                margin-top: 2rem !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+            
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            
+            .mb-5 {
+                margin-bottom: 2rem !important;
+            }
+            
+            .mt-5 {
+                margin-top: 1.5rem !important;
+            }
+        }
+        
+        /* Mobile Grid Improvements - 2x2 Layout */
+        @media (max-width: 768px) {
+            .row {
+                margin-left: -0.5rem !important;
+                margin-right: -0.5rem !important;
+            }
+            
+            .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+            .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            
+            .g-4 {
+                gap: 1rem !important;
+            }
+            
+
+        }
+        
+
+        
+        /* Mobile Touch Improvements */
+        @media (max-width: 768px) {
+            .btn, .nav-link {
+                min-height: 44px !important;
+                min-width: 44px !important;
+            }
+            
+            .btn:active, .nav-link:active {
+                transform: scale(0.95) !important;
+            }
+            
+            body {
+                -webkit-overflow-scrolling: touch !important;
+            }
+        }
+        
+        /* Ensure proper spacing for fixed navbar */
+        main {
+            margin-top: 76px !important;
+            padding-top: 0 !important;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                margin-top: 70px !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            main {
+                margin-top: 65px !important;
+            }
+        }
+        
+        /* Mobile UMKM Section */
+        @media (max-width: 768px) {
+            .category-btn {
+                padding: 0.75rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .category-btn h5 {
+                font-size: 0.9rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .category-btn i {
+                font-size: 1.5rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .product-card {
+                margin-bottom: 1rem !important;
+            }
+            
+            .product-image {
+                height: 150px !important;
+            }
+            
+            .product-card h5 {
+                font-size: 1rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .product-card p {
+                font-size: 0.8rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .product-card .btn {
+                font-size: 0.8rem !important;
+                padding: 0.5rem 1rem !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .category-btn {
+                padding: 0.5rem !important;
+            }
+            
+            .category-btn h5 {
+                font-size: 0.8rem !important;
+            }
+            
+            .category-btn i {
+                font-size: 1.25rem !important;
+            }
+            
+            .product-image {
+                height: 120px !important;
+            }
+            
+            .product-card h5 {
+                font-size: 0.9rem !important;
+            }
+            
+            .product-card p {
+                font-size: 0.75rem !important;
+            }
+        }
+        
+        /* Mobile Video Section */
+        @media (max-width: 768px) {
+            .video-section .ratio {
+                border-radius: 10px !important;
+            }
+            
+            .video-section iframe {
+                border-radius: 10px !important;
+            }
+            
+            .video-card {
+                margin-bottom: 1rem !important;
+            }
+        }
+        
+        /* Mobile Performance Optimizations */
+        @media (max-width: 768px) {
+            /* Reduce animations for better performance */
+            .animate__animated {
+                animation-duration: 0.6s !important;
+            }
+            
+            /* Optimize shadows */
+            .shadow-lg {
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+            }
+            
+            /* Reduce complex effects */
+            .hover-lift:hover {
+                transform: translateY(-3px) !important;
+            }
+            
+            /* Improve text readability */
+            .text-muted {
+                color: #6c757d !important;
+            }
+            
+            /* Better button spacing */
+            .btn + .btn {
+                margin-left: 0 !important;
+                margin-top: 0.5rem !important;
+            }
+            
+            /* Optimize images */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* Stats cards improvements */
+            .stats-card {
+                box-shadow: 0 3px 10px rgba(0,0,0,0.08) !important;
+                transition: all 0.3s ease !important;
+            }
+            
+            .stats-card:hover {
+                transform: translateY(-2px) !important;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.12) !important;
+            }
+            
+            /* Better alignment for stats */
+            .stats-card .stats-icon {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                margin: 0 auto !important;
+            }
+            
+            .stats-card .stats-number {
+                display: block !important;
+                text-align: center !important;
+            }
+            
+            .stats-card .stats-label {
+                display: block !important;
+                text-align: center !important;
+                word-wrap: break-word !important;
+            }
+        }
+        
+        /* Extra Small Mobile Optimizations */
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 1.5rem 0 1rem 0 !important;
+                min-height: 45vh !important;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.5rem !important;
+            }
+            
+            .hero-section .lead {
+                font-size: 0.85rem !important;
+            }
+            
+            .btn-lg {
+                padding: 0.5rem 0.75rem !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .feature-card {
+                padding: 0.75rem !important;
+            }
+            
+            .feature-card h4 {
+                font-size: 0.9rem !important;
+            }
+            
+            .feature-card p {
+                font-size: 0.8rem !important;
+            }
+            
+            .stats-card {
+                padding: 0.5rem !important;
+            }
+            
+            .stats-number {
+                font-size: 1rem !important;
+            }
+            
+            .stats-label {
+                font-size: 0.65rem !important;
+            }
+            
+            .container {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            
+            /* About section improvements for extra small screens */
+            .col-lg-6.col-md-12 {
+                margin-bottom: 1rem !important;
+            }
+            
+            .pe-lg-5 {
+                padding-right: 0 !important;
+            }
+            
+            .display-4 {
+                font-size: 1.5rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            .lead {
+                font-size: 0.9rem !important;
+            }
+            
+            .text-muted {
+                font-size: 0.85rem !important;
+            }
+        }
+        
+        /* Landscape Mobile Optimizations */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero-section {
+                min-height: 40vh !important;
+                padding: 1rem 0 !important;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .hero-section .lead {
+                font-size: 0.9rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .hero-stats {
+                margin-top: 1rem !important;
+            }
+            
+            .py-5 {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+            
+            /* Stats Grid Landscape */
+            .stats-grid {
+                gap: 0.5rem !important;
+            }
+            
+            .stats-card {
+                height: 100px !important;
+                padding: 0.5rem !important;
+            }
+            
+            .stats-number {
+                font-size: 1.25rem !important;
+                margin: 0.2rem 0 !important;
+            }
+            
+            .stats-label {
+                font-size: 0.7rem !important;
+                margin: 0 !important;
+            }
+            
+            .stats-icon {
+                width: 35px !important;
+                height: 35px !important;
+                font-size: 0.9rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+        }
+        
+        /* Stats Grid Layout */
+        .stats-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1rem !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        
+        .stats-item {
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+        
+        .stats-item .stats-card {
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 120px !important;
+        }
+        
+        /* Stats Cards Base Styling - 2x2 Layout */
+        .stats-card {
+            background: var(--white) !important;
+            border-radius: 15px !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08) !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+            overflow: hidden !important;
+            position: relative !important;
+            height: 140px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            padding: 1rem !important;
+        }
+        
+        .stats-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            height: 3px !important;
+            background: linear-gradient(90deg, 
+                var(--gradient-blue-1), 
+                var(--gradient-blue-2), 
+                var(--gradient-blue-3), 
+                var(--gradient-blue-4)) !important;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+        }
+        
+        .stats-icon {
+            width: 50px !important;
+            height: 50px !important;
+            background: rgba(59, 130, 246, 0.1) !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 auto 0.5rem auto !important;
+            font-size: 1.25rem !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .stats-card:hover .stats-icon {
+            transform: scale(1.1) !important;
+            background: rgba(59, 130, 246, 0.2) !important;
+        }
+        
+        .stats-number {
+            font-weight: 700 !important;
+            margin: 0.25rem 0 !important;
+            line-height: 1.2 !important;
+            font-size: 1.75rem !important;
+        }
+        
+        .stats-label {
+            font-weight: 500 !important;
+            opacity: 0.8 !important;
+            line-height: 1.3 !important;
+            font-size: 0.85rem !important;
+            margin: 0 !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+        
+
+        
+        /* Desktop specific adjustments */
+        @media (min-width: 769px) {
+            .stats-grid {
+                gap: 1.5rem !important;
+            }
+            
+            .stats-card {
+                height: 160px !important;
+                padding: 1.5rem !important;
+            }
+            
+            .stats-number {
+                font-size: 2rem !important;
+            }
+            
+            .stats-label {
+                font-size: 0.9rem !important;
+            }
+            
+            .stats-icon {
+                width: 60px !important;
+                height: 60px !important;
+                font-size: 1.5rem !important;
+            }
+        }
+        
+        /* Tablet specific adjustments */
+        @media (min-width: 577px) and (max-width: 768px) {
+            .stats-grid {
+                gap: 1rem !important;
+            }
+            
+            .stats-card {
+                height: 140px !important;
+                padding: 1rem !important;
+            }
+            
+            .stats-number {
+                font-size: 1.75rem !important;
+            }
+            
+            .stats-label {
+                font-size: 0.85rem !important;
+            }
+            
+            .stats-icon {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.25rem !important;
+            }
+        }
+    </style>
 
     <!-- Features Section -->
     <section id="features" class="py-5 bg-light">
@@ -72,7 +1023,7 @@
             </div>
             
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-card h-100 p-5 text-center hover-lift">
                         <div class="feature-icon mb-4">
                             <i class="fas fa-tree"></i>
@@ -84,7 +1035,7 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-card h-100 p-5 text-center hover-lift">
                         <div class="feature-icon mb-4">
                             <i class="fas fa-hands-helping"></i>
@@ -96,7 +1047,7 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-card h-100 p-5 text-center hover-lift">
                         <div class="feature-icon mb-4">
                             <i class="fas fa-store"></i>
@@ -115,7 +1066,7 @@
     <section class="py-5 bg-white">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0" data-aos="fade-right">
                     <div class="pe-lg-5">
                         <div class="section-badge mb-3">
                             <span class="badge bg-success text-white px-4 py-2 fs-6 shadow-sm">
@@ -141,41 +1092,43 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="row g-4">
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="stats-card text-center p-4 hover-lift">
-                                <div class="stats-icon mb-3">
+                <div class="col-lg-6 col-md-12" data-aos="fade-left">
+                    <div class="stats-grid">
+                        <!-- Row 1: Tahun Sejarah & Penduduk -->
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-calendar text-primary"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-2 text-primary counter" data-target="100">0</div>
+                                <div class="stats-number fw-bold text-primary counter" data-target="100">0</div>
                                 <div class="stats-label text-muted">Tahun Sejarah</div>
                             </div>
                         </div>
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="stats-card text-center p-4 hover-lift">
-                                <div class="stats-icon mb-3">
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-users text-success"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-2 text-success counter" data-target="500">0</div>
+                                <div class="stats-number fw-bold text-success counter" data-target="500">0</div>
                                 <div class="stats-label text-muted">Penduduk</div>
                             </div>
                         </div>
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="stats-card text-center p-4 hover-lift">
-                                <div class="stats-icon mb-3">
+                        <!-- Row 2: UMKM Aktif & Hektar Lahan -->
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-store text-warning"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-2 text-warning counter" data-target="50">0</div>
+                                <div class="stats-number fw-bold text-warning counter" data-target="50">0</div>
                                 <div class="stats-label text-muted">UMKM Aktif</div>
                             </div>
                         </div>
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="400">
-                            <div class="stats-card text-center p-4 hover-lift">
-                                <div class="stats-icon mb-3">
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-map text-info"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-2 text-info counter" data-target="1000">0</div>
+                                <div class="stats-number fw-bold text-info counter" data-target="1000">0</div>
                                 <div class="stats-label text-muted">Hektar Lahan</div>
                             </div>
                         </div>
@@ -310,74 +1263,7 @@
     </section>
     @endif
 
-    <!-- QR Scanner Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <div class="section-badge mb-3">
-                    <span class="badge bg-success text-white px-4 py-2 fs-6 shadow-sm">
-                        <i class="fas fa-qrcode me-2"></i>
-                        QR Scanner
-                    </span>
-                </div>
-                <h2 class="display-4 fw-bold text-dark mb-3">
-                    Scan <span class="text-primary">QR Code</span>
-                </h2>
-                <p class="lead text-muted fs-5">
-                    Scan QR code untuk mengakses informasi UMKM dan konten Dusun Ngelampengan
-                </p>
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-10">
-                    <div class="scanner-card text-center p-5 hover-lift" data-aos="fade-up" data-aos-delay="200">
-                        <div class="scanner-container mb-4">
-                            <div id="qr-reader" class="qr-reader-container"></div>
-                            <div id="qr-reader-results" class="qr-results mt-3"></div>
-                        </div>
-                        
-                        <div class="scanner-controls mb-4">
-                            <button id="start-scanner" class="btn btn-primary btn-lg me-3">
-                                <i class="fas fa-camera me-2"></i>
-                                Mulai Scan
-                            </button>
-                            <button id="stop-scanner" class="btn btn-outline-secondary btn-lg" style="display: none;">
-                                <i class="fas fa-stop me-2"></i>
-                                Stop Scan
-                            </button>
-                        </div>
-                        
-                        <div class="scanner-info bg-light p-3 rounded">
-                            <small class="text-muted">
-                                <i class="fas fa-info-circle me-2"></i>
-                                Pastikan kamera Anda mengizinkan akses untuk scanning QR code
-                            </small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- QR Code Display Section -->
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-6 col-md-8">
-                    <div class="qr-display-card text-center p-4 hover-lift" data-aos="fade-up" data-aos-delay="400">
-                        <h4 class="fw-bold text-dark mb-3">
-                            <i class="fas fa-qrcode text-primary me-2"></i>
-                            QR Code Website
-                        </h4>
-                        <p class="text-muted mb-3">
-                            Tampilkan QR code ini untuk di-scan oleh pengunjung
-                        </p>
-                        <div id="website-qrcode" class="mb-3"></div>
-                        <a href="{{ route('qr-code') }}" class="btn btn-outline-primary">
-                            <i class="fas fa-external-link-alt me-2"></i>
-                            Lihat QR Code Lengkap
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Logo Section -->
     <section class="py-5 bg-white">
@@ -401,7 +1287,7 @@
                 <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-right">
                     <div class="logo-card text-center p-4 hover-lift">
                         <div class="logo-container mb-3">
-                            <img src="/images/logos/logo_bantul.png" alt="Logo Kabupaten Bantul" class="logo-img" onerror="this.style.display='none'">
+                            <img src="{{ asset('images/logos/logo_bantul.png') }}" alt="Logo Kabupaten Bantul" class="logo-img" onerror="this.style.display='none'">
                             <div class="logo-fallback" style="display: none;">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
@@ -414,7 +1300,7 @@
                 <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-left">
                     <div class="logo-card text-center p-4 hover-lift">
                         <div class="logo-container mb-3">
-                            <img src="/images/logos/logo_kelompok.png" alt="Logo Kelompok KKN" class="logo-img" onerror="this.style.display='none'">
+                            <img src="{{ asset('images/logos/logo_kelompok.png') }}" alt="Logo Kelompok KKN" class="logo-img" onerror="this.style.display='none'">
                             <div class="logo-fallback" style="display: none;">
                                 <i class="fas fa-users"></i>
                             </div>
@@ -570,54 +1456,7 @@
              font-size: 3rem;
          }
          
-         /* QR Scanner Section Styling */
-        .scanner-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .scanner-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-        
-        .qr-reader-container {
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .qr-reader-container video {
-            width: 100%;
-            border-radius: 15px;
-        }
-        
-        .qr-results {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 15px;
-            border-left: 4px solid var(--bs-success);
-            display: none;
-        }
-        
-        .qr-display-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .qr-display-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
+ 
         
         /* Logo Section Responsive */
          @media (max-width: 768px) {
@@ -638,18 +1477,7 @@
                  font-size: 0.9rem;
              }
              
-             /* QR Scanner Mobile Responsive */
-             .scanner-card {
-                 padding: 2rem !important;
-             }
-             
-             .qr-reader-container {
-                 max-width: 300px;
-             }
-             
-             .scanner-controls .btn {
-                 margin-bottom: 0.5rem;
-             }
+
          }
          
          @media (max-width: 576px) {
@@ -867,10 +1695,7 @@
         }
     </style>
 
-    <!-- QR Scanner Library -->
-    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
-    <!-- QR Code Generator Library -->
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+
     
     <!-- JavaScript for animations and interactions -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -946,141 +1771,130 @@
             }, 16);
         });
         
-        // QR Scanner functionality
-        let html5QrcodeScanner = null;
-        let isScanning = false;
-        
-        // Initialize QR Scanner
-        function initQRScanner() {
-            const qrReader = document.getElementById('qr-reader');
-            const startButton = document.getElementById('start-scanner');
-            const stopButton = document.getElementById('stop-scanner');
-            const resultsDiv = document.getElementById('qr-reader-results');
-            
-            if (!qrReader) return;
-            
-            startButton.addEventListener('click', function() {
-                if (!isScanning) {
-                    startScanner();
-                }
-            });
-            
-            stopButton.addEventListener('click', function() {
-                if (isScanning) {
-                    stopScanner();
-                }
-            });
-            
-            function startScanner() {
-                html5QrcodeScanner = new Html5QrcodeScanner(
-                    "qr-reader",
-                    { 
-                        fps: 10, 
-                        qrbox: { width: 250, height: 250 },
-                        aspectRatio: 1.0
-                    },
-                    false
-                );
-                
-                html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-                
-                isScanning = true;
-                startButton.style.display = 'none';
-                stopButton.style.display = 'inline-block';
-                resultsDiv.style.display = 'none';
-            }
-            
-            function stopScanner() {
-                if (html5QrcodeScanner) {
-                    html5QrcodeScanner.clear();
-                    html5QrcodeScanner = null;
-                }
-                
-                isScanning = false;
-                startButton.style.display = 'inline-block';
-                stopButton.style.display = 'none';
-                qrReader.innerHTML = '<div class="text-center p-4"><i class="fas fa-camera fa-3x text-muted mb-3"></i><p class="text-muted">Kamera scanner telah dihentikan</p></div>';
-            }
-            
-            function onScanSuccess(decodedText, decodedResult) {
-                // Stop scanner after successful scan
-                stopScanner();
-                
-                // Display result
-                resultsDiv.style.display = 'block';
-                resultsDiv.innerHTML = `
-                    <div class="alert alert-success">
-                        <h6><i class="fas fa-check-circle me-2"></i>QR Code Berhasil Di-scan!</h6>
-                        <p class="mb-2"><strong>Hasil:</strong> ${decodedText}</p>
-                        <div class="d-flex gap-2">
-                            <button onclick="openScannedURL('${decodedText}')" class="btn btn-sm btn-primary">
-                                <i class="fas fa-external-link-alt me-1"></i>Buka Link
-                            </button>
-                            <button onclick="copyToClipboard('${decodedText}')" class="btn btn-sm btn-outline-secondary">
-                                <i class="fas fa-copy me-1"></i>Salin
-                            </button>
-                        </div>
-                    </div>
-                `;
-                
-                // Auto-scroll to results
-                resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-            
-            function onScanFailure(error) {
-                // Handle scan failure silently
-                console.warn(`QR scan error = ${error}`);
-            }
+        // Mobile optimizations
+        function isMobile() {
+            return window.innerWidth <= 768;
         }
         
-        // Function to open scanned URL
-        function openScannedURL(url) {
-            if (url.startsWith('http://') || url.startsWith('https://')) {
-                window.open(url, '_blank');
-            } else {
-                // If it's not a URL, treat it as text
-                alert('Teks yang di-scan: ' + url);
-            }
-        }
-        
-        // Function to copy text to clipboard
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                alert('Teks berhasil disalin ke clipboard!');
-            }).catch(function(err) {
-                console.error('Gagal menyalin teks: ', err);
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                alert('Teks berhasil disalin ke clipboard!');
+        // Adjust AOS settings for mobile
+        if (isMobile()) {
+            AOS.init({
+                duration: 600,
+                easing: 'ease-out',
+                once: true,
+                offset: 50,
+                disable: 'phone'
             });
         }
         
-        // Generate website QR code
-        function generateWebsiteQR() {
-            const qrElement = document.getElementById('website-qrcode');
-            if (qrElement) {
-                const websiteUrl = '{{ url("/") }}';
+        // Handle mobile touch events
+        if ('ontouchstart' in window) {
+            document.body.classList.add('touch-device');
+            
+            // Optimize touch interactions
+            document.querySelectorAll('.btn, .nav-link, .feature-card').forEach(element => {
+                element.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
                 
-                QRCode.toCanvas(qrElement, websiteUrl, {
-                    width: 150,
-                    margin: 2,
-                    color: {
-                        dark: '#2563eb',
-                        light: '#ffffff'
-                    }
-                }, function (error) {
-                    if (error) {
-                        console.error('QR Code generation error:', error);
-                        qrElement.innerHTML = '<div class="text-danger"><i class="fas fa-exclamation-triangle fa-2x mb-2"></i><br>QR Code tidak dapat dibuat</div>';
+                element.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
+            });
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (isMobile()) {
+                // Mobile-specific adjustments
+                document.querySelectorAll('.animate__animated').forEach(element => {
+                    element.style.animationDuration = '0.6s';
+                });
+            }
+        });
+        
+        // Ensure navbar consistency
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure navbar is properly styled
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                navbar.style.background = 'var(--white)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                navbar.style.zIndex = '1030';
+            }
+            
+            // Ensure active nav link is properly highlighted
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && (href === currentPath || (currentPath === '/' && href.includes('beranda')))) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // Mobile navigation improvements
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            
+            if (navbarToggler && navbarCollapse) {
+                // Close mobile menu when clicking on a link
+                const navLinks = navbarCollapse.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth < 992) {
+                            navbarCollapse.classList.remove('show');
+                        }
+                    });
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+                        navbarCollapse.classList.remove('show');
                     }
                 });
             }
-        }
+            
+            // Force correct order for stats cards
+            const statsContainer = document.querySelector('.col-lg-6 .row');
+            if (statsContainer) {
+                const statsCards = statsContainer.querySelectorAll('.col-6');
+                if (statsCards.length === 4) {
+                    // Ensure correct order: Tahun Sejarah, Penduduk, UMKM Aktif, Hektar Lahan
+                    const expectedOrder = [
+                        { icon: 'fa-calendar', label: 'Tahun Sejarah', color: 'text-primary', target: 100 },
+                        { icon: 'fa-users', label: 'Penduduk', color: 'text-success', target: 500 },
+                        { icon: 'fa-store', label: 'UMKM Aktif', color: 'text-warning', target: 50 },
+                        { icon: 'fa-map', label: 'Hektar Lahan', color: 'text-info', target: 1000 }
+                    ];
+                    
+                    statsCards.forEach((card, index) => {
+                        const expected = expectedOrder[index];
+                        const icon = card.querySelector('.stats-icon i');
+                        const label = card.querySelector('.stats-label');
+                        const number = card.querySelector('.stats-number');
+                        
+                        if (icon && label && number) {
+                            // Update icon class
+                            icon.className = `fas ${expected.icon} ${expected.color}`;
+                            
+                            // Update label
+                            label.textContent = expected.label;
+                            
+                            // Update number target
+                            number.setAttribute('data-target', expected.target);
+                            number.textContent = '0';
+                        }
+                    });
+                }
+            }
+        });
+        
+
         
         // Handle logo fallback
         document.addEventListener('DOMContentLoaded', function() {
@@ -1127,9 +1941,18 @@
                 }, 5000);
             });
             
-            // Initialize QR Scanner and generate website QR
-            initQRScanner();
-            generateWebsiteQR();
+
         });
+        
+        // Force page refresh to ensure correct order
+        if (window.location.pathname === '/beranda' || window.location.pathname === '/') {
+            // Add a small delay to ensure DOM is ready
+            setTimeout(() => {
+                const statsContainer = document.querySelector('.col-lg-6 .row');
+                if (statsContainer) {
+                    console.log('Stats container found, ensuring correct order...');
+                }
+            }, 100);
+        }
     </script>
 @endsection 

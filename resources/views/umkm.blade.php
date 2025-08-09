@@ -178,16 +178,16 @@
                 </div>
             </div>
             
-                         <div class="row g-2 justify-content-center" id="products-grid">
+                         <div class="row g-3 justify-content-center" id="products-grid">
                  @forelse($umkm as $index => $business)
-                 <div class="col-lg-4 col-md-4 col-4 product-card" data-category="{{ $business->category }}" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
+                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 product-card" data-category="{{ $business->category }}" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
                     <div class="feature-card h-100 position-relative hover-lift">
                         <div class="product-image position-relative overflow-hidden">
                             @if($business->image)
-                                <img src="{{ asset('storage/' . $business->image) }}" alt="{{ $business->name }}" class="img-fluid w-100 product-img">
+                                <img src="{{ asset('storage/' . $business->image) }}" alt="{{ $business->name }}" class="img-fluid w-100 product-img" style="height: 200px; object-fit: cover;">
                             @else
-                                <div class="placeholder-image d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-store text-muted" style="font-size: 4rem;"></i>
+                                <div class="placeholder-image d-flex align-items-center justify-content-center" style="height: 200px; background: #f8f9fa;">
+                                    <i class="fas fa-store text-muted" style="font-size: 3rem;"></i>
                                 </div>
                             @endif
                             <div class="product-overlay">
@@ -204,10 +204,10 @@
                                 <span class="badge bg-primary">{{ $business->category }}</span>
                             </div>
                         </div>
-                        <div class="p-4">
+                        <div class="p-3">
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <h4 class="fw-bold text-dark mb-0 product-title">{{ $business->name }}</h4>
-                                <div class="rating">
+                                <h5 class="fw-bold text-dark mb-0 product-title">{{ $business->name }}</h5>
+                                <div class="rating d-none d-sm-block">
                                     <i class="fas fa-star text-warning"></i>
                                     <i class="fas fa-star text-warning"></i>
                                     <i class="fas fa-star text-warning"></i>
@@ -215,23 +215,23 @@
                                     <i class="fas fa-star text-warning"></i>
                                 </div>
                             </div>
-                            <p class="text-muted mb-3 product-description">
-                                {{ Str::limit($business->description, 120) }}
+                            <p class="text-muted mb-2 product-description small">
+                                {{ Str::limit($business->description, 80) }}
                             </p>
                             <div class="product-info mb-3">
-                                <div class="d-flex align-items-center mb-2">
+                                <div class="d-flex align-items-center mb-1">
                                     <i class="fas fa-user text-primary me-2"></i>
                                     <small class="text-muted">{{ $business->owner_name }}</small>
                                 </div>
                                 <div class="d-flex align-items-center">
                                     <i class="fas fa-map-marker-alt text-success me-2"></i>
-                                    <small class="text-muted">{{ Str::limit($business->address, 50) }}</small>
+                                    <small class="text-muted">{{ Str::limit($business->address, 40) }}</small>
                                 </div>
                             </div>
                             <div class="text-center">
-                                <a href="tel:{{ $business->owner_phone }}" class="btn btn-primary btn-lg w-100 hover-lift">
-                                    <i class="fas fa-phone me-2"></i>
-                                    Hubungi {{ $business->owner_name }}
+                                <a href="tel:{{ $business->owner_phone }}" class="btn btn-primary btn-sm w-100 hover-lift">
+                                    <i class="fas fa-phone me-1"></i>
+                                    <span class="d-none d-sm-inline">Hubungi</span> {{ $business->owner_name }}
                                 </a>
                             </div>
                         </div>

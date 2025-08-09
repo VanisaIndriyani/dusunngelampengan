@@ -16,9 +16,7 @@ Route::get('/qr-code', function () {
     return view('qr-code');
 })->name('qr-code');
 
-Route::get('/qr-scanner', function () {
-    return view('qr-scanner');
-})->name('qr-scanner');
+
 
 // Auth Routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');

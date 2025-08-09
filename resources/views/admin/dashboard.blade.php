@@ -131,6 +131,7 @@
                             <i class="fas fa-qrcode me-1"></i><span class="d-none d-sm-inline">QR Code</span><span class="d-sm-none">QR</span>
                         </a>
                     </div>
+
                 </div>
             </div>
         </div>
