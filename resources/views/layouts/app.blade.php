@@ -1567,7 +1567,7 @@
                 <div class="col-md-6">
                     <h5>Dusun Ngelampengan</h5>
                     <p class="mb-2">Kapanewon Dlingo, Bantul, DIY</p>
-                    <p class="mb-0">KKN UMBY 2025</p>
+                 
                 </div>
                 <div class="col-md-6 text-md-end">
                     <p class="mb-0">&copy; {{ date('Y') }} Dusun Ngelampengan. Semua hak dilindungi.</p>

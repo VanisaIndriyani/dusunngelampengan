@@ -452,7 +452,7 @@
                 </div>
                 <h3>Admin Panel</h3>
                 <p>Dusun Ngelampengan</p>
-                <small class="text-light opacity-75">KKN UMBY 2025</small>
+               
             </div>
             
             <div class="login-body">
