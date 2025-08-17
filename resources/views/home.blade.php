@@ -1479,9 +1479,7 @@
                                         <i class="fas fa-play me-2"></i>Tonton Video
                                     </button>
                                     @if($videoContent && $videoContent->video_url)
-                                        <a href="{{ $videoContent->video_url }}" target="_blank" class="btn btn-outline-primary btn-lg mb-2">
-                                            <i class="fab fa-youtube me-2"></i>Buka di YouTube
-                                        </a>
+                                        
                                     @else
                                         <a href="https://www.youtube.com" target="_blank" class="btn btn-outline-primary btn-lg mb-2">
                                             <i class="fab fa-youtube me-2"></i>Lihat di YouTube
