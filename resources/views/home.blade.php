@@ -366,11 +366,43 @@
                 font-size: 0.9rem !important;
                 padding: 0.75rem 1.5rem !important;
             }
+            
+            /* 2x2 Grid Layout for Mobile */
+            .features-section .row {
+                gap: 1rem !important;
+            }
+            
+            .features-section .col-lg-6 {
+                margin-bottom: 1rem !important;
+            }
+            
+            /* Ensure equal height for feature cards */
+            .features-section .feature-card {
+                height: auto !important;
+                min-height: 200px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+            }
+            
+            .features-section .feature-card .feature-icon {
+                flex-shrink: 0 !important;
+            }
+            
+            .features-section .feature-card h4 {
+                flex-shrink: 0 !important;
+            }
+            
+            .features-section .feature-card p {
+                flex-grow: 1 !important;
+                margin-bottom: 0 !important;
+            }
         }
         
         @media (max-width: 576px) {
             .feature-card {
                 padding: 1rem !important;
+                min-height: 180px !important;
             }
             
             .feature-card h4 {
@@ -394,6 +426,69 @@
             .section-badge .badge {
                 font-size: 0.8rem !important;
                 padding: 0.5rem 1rem !important;
+            }
+            
+            /* 2x2 Grid Layout for Small Mobile */
+            .features-section .row {
+                gap: 0.75rem !important;
+            }
+            
+            .features-section .col-lg-6 {
+                margin-bottom: 0.75rem !important;
+            }
+            
+            .features-section .feature-card {
+                min-height: 160px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .feature-card {
+                padding: 0.75rem !important;
+                min-height: 150px !important;
+            }
+            
+            .feature-card h4 {
+                font-size: 0.9rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            
+            .feature-card p {
+                font-size: 0.8rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            .feature-icon {
+                width: 45px !important;
+                height: 45px !important;
+                font-size: 1.1rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            
+            .display-4 {
+                font-size: 1.5rem !important;
+            }
+            
+            .lead {
+                font-size: 0.9rem !important;
+            }
+            
+            .section-badge .badge {
+                font-size: 0.75rem !important;
+                padding: 0.5rem 0.75rem !important;
+            }
+            
+            /* 2x2 Grid Layout for Extra Small Mobile */
+            .features-section .row {
+                gap: 0.5rem !important;
+            }
+            
+            .features-section .col-lg-6 {
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .features-section .feature-card {
+                min-height: 140px !important;
             }
         }
         
@@ -1178,7 +1273,7 @@
     </style>
 
     <!-- Features Section -->
-    <section id="features" class="py-5 bg-light">
+    <section id="features" class="py-5 bg-light features-section">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <div class="section-badge mb-3">
@@ -1196,38 +1291,52 @@
             </div>
             
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-card h-100 p-5 text-center hover-lift">
-                        <div class="feature-icon mb-4">
+                <!-- Row 1: Alam yang Asri & Masyarakat Solid -->
+                <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card h-100 p-4 p-lg-5 text-center hover-lift">
+                        <div class="feature-icon mb-3 mb-lg-4">
                             <i class="fas fa-tree"></i>
                         </div>
-                        <h4 class="fw-bold text-dark mb-3">Alam yang Asri</h4>
-                        <p class="text-muted">
+                        <h4 class="fw-bold text-dark mb-2 mb-lg-3">Alam yang Asri</h4>
+                        <p class="text-muted mb-0">
                             Dikelilingi oleh pemandangan alam yang indah dengan udara segar dan lingkungan yang nyaman untuk tinggal.
                         </p>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-card h-100 p-5 text-center hover-lift">
-                        <div class="feature-icon mb-4">
+                <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card h-100 p-4 p-lg-5 text-center hover-lift">
+                        <div class="feature-icon mb-3 mb-lg-4">
                             <i class="fas fa-hands-helping"></i>
                         </div>
-                        <h4 class="fw-bold text-dark mb-3">Masyarakat Solid</h4>
-                        <p class="text-muted">
+                        <h4 class="fw-bold text-dark mb-2 mb-lg-3">Masyarakat Solid</h4>
+                        <p class="text-muted mb-0">
                             Semangat gotong royong yang kuat dan kebersamaan dalam setiap kegiatan pembangunan dusun.
                         </p>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-card h-100 p-5 text-center hover-lift">
-                        <div class="feature-icon mb-4">
+                <!-- Row 2: UMKM Berkembang & Budaya Lestari -->
+                <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card h-100 p-4 p-lg-5 text-center hover-lift">
+                        <div class="feature-icon mb-3 mb-lg-4">
                             <i class="fas fa-store"></i>
                         </div>
-                        <h4 class="fw-bold text-dark mb-3">UMKM Berkembang</h4>
-                        <p class="text-muted">
+                        <h4 class="fw-bold text-dark mb-2 mb-lg-3">UMKM Berkembang</h4>
+                        <p class="text-muted mb-0">
                             Berbagai UMKM yang berkembang pesat dengan produk berkualitas dan inovasi yang terus meningkat.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card h-100 p-4 p-lg-5 text-center hover-lift">
+                        <div class="feature-icon mb-3 mb-lg-4">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h4 class="fw-bold text-dark mb-2 mb-lg-3">Budaya Lestari</h4>
+                        <p class="text-muted mb-0">
+                            Mempertahankan nilai-nilai budaya dan kearifan lokal yang telah diwariskan dari generasi ke generasi.
                         </p>
                     </div>
                 </div>
