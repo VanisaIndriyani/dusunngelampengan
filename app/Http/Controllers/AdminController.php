@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UMKM;
 use App\Models\Content;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -230,17 +231,63 @@ class AdminController extends Controller
 
     public function settingsUpdate(Request $request)
     {
+        $user = auth()->user();
+        
+        // Basic validation for website settings
         $request->validate([
             'site_name' => 'required|string|max:255',
             'site_description' => 'required|string',
             'contact_email' => 'required|email',
             'contact_phone' => 'required|string',
             'address' => 'required|string',
+            'facebook_url' => 'nullable|url',
+            'instagram_url' => 'nullable|url',
+            'youtube_url' => 'nullable|url',
+            'whatsapp_number' => 'nullable|string',
+            'meta_keywords' => 'nullable|string',
+            'meta_description' => 'nullable|string',
         ]);
-
-        // Update settings logic here
-        // You can use config files or database settings table
-
+        
+        // Admin account update validation
+        if ($request->filled('admin_email') || $request->filled('new_password')) {
+            $request->validate([
+                'admin_email' => 'required|email|unique:users,email,' . $user->id,
+                'current_password' => 'required_with:new_password',
+                'new_password' => 'nullable|min:8|confirmed',
+                'confirm_password' => 'required_with:new_password',
+            ]);
+            
+            // Verify current password if trying to change password
+            if ($request->filled('new_password')) {
+                if (!Hash::check($request->current_password, $user->password)) {
+                    return back()->withErrors(['current_password' => 'Password saat ini tidak sesuai'])->withInput();
+                }
+            }
+        }
+        
+        // Update admin account if provided
+        if ($request->filled('admin_email') || $request->filled('new_password')) {
+            $userData = [];
+            
+            // Update email if changed
+            if ($request->filled('admin_email') && $request->admin_email !== $user->email) {
+                $userData['email'] = $request->admin_email;
+            }
+            
+            // Update password if provided
+            if ($request->filled('new_password')) {
+                $userData['password'] = Hash::make($request->new_password);
+            }
+            
+            // Update user data
+            if (!empty($userData)) {
+                $user->update($userData);
+            }
+        }
+        
+        // Update website settings (you can implement this with config files or database)
+        // For now, we'll just redirect with success message
+        
         return redirect()->route('admin.settings')->with('success', 'Pengaturan berhasil diperbarui!');
     }
 } 
