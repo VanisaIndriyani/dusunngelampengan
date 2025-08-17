@@ -665,6 +665,128 @@
             .video-card {
                 margin-bottom: 1rem !important;
             }
+            
+            .video-container {
+                margin: 0 0.5rem !important;
+            }
+            
+            .video-placeholder h3 {
+                font-size: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .video-placeholder p {
+                font-size: 0.95rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .video-placeholder .btn {
+                font-size: 0.85rem !important;
+                padding: 0.75rem 1rem !important;
+            }
+            
+            .d-flex.gap-3 {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+            
+            .video-icon-container {
+                width: 100px !important;
+                height: 100px !important;
+            }
+            
+            .video-placeholder i {
+                font-size: 3rem !important;
+            }
+            
+            /* Video Thumbnail Mobile */
+            .video-thumbnail {
+                height: 300px !important;
+            }
+            
+            .play-icon-container {
+                width: 100px !important;
+                height: 100px !important;
+            }
+            
+            .play-icon-container i {
+                font-size: 2.5rem !important;
+            }
+            
+            .video-info {
+                padding: 1.5rem !important;
+            }
+            
+            .video-stats {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+                align-items: flex-start !important;
+            }
+            
+            .col-lg-4.text-lg-end {
+                text-align: center !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .video-container {
+                margin: 0 0.25rem !important;
+            }
+            
+            .video-placeholder h3 {
+                font-size: 1.25rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            
+            .video-placeholder p {
+                font-size: 0.9rem !important;
+                margin-bottom: 1.25rem !important;
+            }
+            
+            .video-placeholder .btn {
+                font-size: 0.8rem !important;
+                padding: 0.5rem 0.75rem !important;
+            }
+            
+            .video-icon-container {
+                width: 80px !important;
+                height: 80px !important;
+            }
+            
+            .video-placeholder i {
+                font-size: 2.5rem !important;
+            }
+            
+            /* Video Thumbnail Small Mobile */
+            .video-thumbnail {
+                height: 250px !important;
+            }
+            
+            .play-icon-container {
+                width: 80px !important;
+                height: 80px !important;
+            }
+            
+            .play-icon-container i {
+                font-size: 2rem !important;
+            }
+            
+            .video-info {
+                padding: 1rem !important;
+            }
+            
+            .video-info h3 {
+                font-size: 1.1rem !important;
+            }
+            
+            .video-info p {
+                font-size: 0.85rem !important;
+            }
+            
+            .video-stats {
+                gap: 0.5rem !important;
+                font-size: 0.8rem !important;
+            }
         }
         
         /* Mobile Performance Optimizations */
@@ -737,6 +859,57 @@
             .hero-section {
                 padding: 1.5rem 0 1rem 0 !important;
                 min-height: 45vh !important;
+            }
+            
+            .video-placeholder h3 {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .video-placeholder p {
+                font-size: 0.8rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .video-icon-container {
+                width: 70px !important;
+                height: 70px !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .video-placeholder i {
+                font-size: 2rem !important;
+            }
+            
+            .video-placeholder .btn {
+                font-size: 0.75rem !important;
+                padding: 0.5rem 0.75rem !important;
+            }
+            
+            .video-placeholder {
+                padding: 1.5rem !important;
+            }
+            
+            /* Logo section extra small mobile */
+            .logo-container {
+                width: 70px !important;
+                height: 70px !important;
+            }
+            
+            .logo-fallback {
+                font-size: 1.75rem !important;
+            }
+            
+            .logo-card {
+                padding: 1rem !important;
+            }
+            
+            .logo-card h4 {
+                font-size: 0.9rem !important;
+            }
+            
+            .logo-card p {
+                font-size: 0.75rem !important;
             }
             
             .hero-section h1 {
@@ -1216,7 +1389,6 @@
     </section>
 
     <!-- Video Section -->
-    @if($videoContent)
     <section class="py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -1227,33 +1399,95 @@
                     </span>
                 </div>
                 <h2 class="display-4 fw-bold text-dark mb-3">
-                    {{ $videoContent->title }}
+                    Video Profil Dusun Ngelampengan
                 </h2>
                 <p class="lead text-muted fs-5">
-                    {{ $videoContent->content }}
+                    Tonton video profil lengkap Dusun Ngelampengan yang menampilkan keindahan alam, budaya, dan UMKM yang berkembang di wilayah Kapanewon Dlingo, Daerah Istimewa Yogyakarta.
                 </p>
             </div>
             
             <div class="row justify-content-center">
-                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="video-container position-relative" style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="{{ str_replace(['watch?v=', 'youtu.be/'], ['embed/', 'www.youtube.com/embed/'], $videoContent->video_url) }}?rel=0&modestbranding=1" 
-                                    title="Video Dusun Ngelampengan" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen
-                                    style="border-radius: 15px;"
-                                    loading="lazy"
-                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            </iframe>
-                            <div class="video-fallback d-none" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #f8f9fa; display: flex; align-items: center; justify-content: center; flex-direction: column; border-radius: 15px;">
-                                <i class="fas fa-video fa-3x text-muted mb-3"></i>
-                                <h5 class="text-muted mb-2">Video Tidak Dapat Dimuat</h5>
-                                <p class="text-muted text-center mb-3">Video YouTube tidak dapat ditampilkan. Silakan klik link di bawah untuk menonton langsung di YouTube.</p>
-                                <a href="{{ $videoContent->video_url }}" target="_blank" class="btn btn-primary">
-                                    <i class="fas fa-external-link-alt me-2"></i>Tonton di YouTube
-                                </a>
+                <div class="col-lg-10" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Video Thumbnail Container -->
+                    <div class="video-thumbnail-container position-relative" style="border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.15); background: white;">
+                        <!-- Video Thumbnail Section -->
+                        <div class="video-thumbnail" style="position: relative; height: 400px; display: flex; align-items: center; justify-content: center; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; @if($videoContent && $videoContent->image) background-image: url('{{ asset('storage/' . $videoContent->image) }}'); @else background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); @endif">
+                            <!-- Dark overlay for better text readability when using image -->
+                            @if($videoContent && $videoContent->image)
+                                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1;"></div>
+                            @endif
+                            
+                            <!-- Decorative Elements -->
+                            <div class="thumbnail-pattern" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; z-index: 1;">
+                                <div style="position: absolute; top: 20px; left: 20px; width: 60px; height: 60px; background: rgba(255,255,255,0.3); border-radius: 50%;"></div>
+                                <div style="position: absolute; top: 100px; right: 40px; width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
+                                <div style="position: absolute; bottom: 80px; left: 60px; width: 80px; height: 80px; background: rgba(255,255,255,0.25); border-radius: 50%;"></div>
+                                <div style="position: absolute; bottom: 40px; right: 80px; width: 50px; height: 50px; background: rgba(255,255,255,0.15); border-radius: 50%;"></div>
+                            </div>
+                            
+                            <!-- Play Button -->
+                            <div class="video-play-button" style="position: relative; z-index: 2;">
+                                <div class="play-icon-container" style="width: 120px; height: 120px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); cursor: pointer; transition: all 0.3s ease;" onclick="openVideo()">
+                                    <i class="fas fa-play fa-3x text-primary" style="margin-left: 8px;"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Video Duration -->
+                            <div class="video-duration" style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; z-index: 2;">
+                                05:32
+                            </div>
+                            
+                            <!-- YouTube Badge -->
+                            <div class="video-source" style="position: absolute; top: 20px; left: 20px; background: rgba(255,255,255,0.9); color: #333; padding: 8px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px; z-index: 2;">
+                                <i class="fab fa-youtube text-danger"></i>
+                                YouTube
+                            </div>
+                            
+                            <!-- Image Source Badge (if image exists) -->
+                            @if($videoContent && $videoContent->image)
+                                <div class="image-source" style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 6px 10px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; z-index: 2;">
+                                    <i class="fas fa-image me-1"></i>Gambar Admin
+                                </div>
+                            @endif
+                        </div>
+                        
+                        <!-- Video Info Section -->
+                        <div class="video-info" style="padding: 2rem; background: white;">
+                            <div class="row align-items-center">
+                                <div class="col-lg-8">
+                                    <h3 class="fw-bold text-dark mb-2 fs-4">Profil Dusun Ngelampengan - Keindahan Alam & UMKM</h3>
+                                    <p class="text-muted mb-2">
+                                        <i class="fab fa-youtube text-danger me-2"></i>
+                                        <span class="fw-semibold">Dusun Ngelampengan Official</span>
+                                    </p>
+                                    <div class="video-stats d-flex align-items-center gap-4 text-muted">
+                                        <span><i class="fas fa-eye me-1"></i>2.5K views</span>
+                                        <span><i class="fas fa-calendar me-1"></i>2 weeks ago</span>
+                                        <span><i class="fas fa-thumbs-up me-1"></i>128 likes</span>
+                                    </div>
+                                    @if($videoContent && $videoContent->video_url)
+                                        <div class="mt-3">
+                                            <small class="text-muted">
+                                                <i class="fas fa-info-circle me-1"></i>
+                                                Video URL: {{ $videoContent->video_url }}
+                                            </small>
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-lg-4 text-lg-end">
+                                    <button class="btn btn-primary btn-lg me-2 mb-2" onclick="openVideo()">
+                                        <i class="fas fa-play me-2"></i>Tonton Video
+                                    </button>
+                                    @if($videoContent && $videoContent->video_url)
+                                        <a href="{{ $videoContent->video_url }}" target="_blank" class="btn btn-outline-primary btn-lg mb-2">
+                                            <i class="fab fa-youtube me-2"></i>Buka di YouTube
+                                        </a>
+                                    @else
+                                        <a href="https://www.youtube.com" target="_blank" class="btn btn-outline-primary btn-lg mb-2">
+                                            <i class="fab fa-youtube me-2"></i>Lihat di YouTube
+                                        </a>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1261,12 +1495,11 @@
             </div>
         </div>
     </section>
-    @endif
 
 
 
     <!-- Logo Section -->
-    <section class="py-5 bg-white">
+    <section class="py-5 bg-white logo-section">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <div class="section-badge mb-3">
@@ -1279,13 +1512,14 @@
                     Logo <span class="text-primary">Resmi</span>
                 </h2>
                 <p class="lead text-muted fs-5">
-                    Logo Kabupaten Bantul dan Kelompok KKN UMBY 2025
+                    Logo Kabupaten Bantul, Kelompok KKN UMBY 2025, dan Logo KKN
                 </p>
             </div>
             
-            <div class="row justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-stretch">
+                <!-- Logo 1: Kabupaten Bantul -->
                 <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-right">
-                    <div class="logo-card text-center p-4 hover-lift">
+                    <div class="logo-card text-center p-4 h-100 hover-lift">
                         <div class="logo-container mb-3">
                             <img src="{{ asset('images/logos/logo_bantul.png') }}" alt="Logo Kabupaten Bantul" class="logo-img" onerror="this.style.display='none'">
                             <div class="logo-fallback" style="display: none;">
@@ -1297,8 +1531,9 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-left">
-                    <div class="logo-card text-center p-4 hover-lift">
+                <!-- Logo 2: KKN Kelompok -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="logo-card text-center p-4 h-100 hover-lift">
                         <div class="logo-container mb-3">
                             <img src="{{ asset('images/logos/logo_kelompok.png') }}" alt="Logo Kelompok KKN" class="logo-img" onerror="this.style.display='none'">
                             <div class="logo-fallback" style="display: none;">
@@ -1307,6 +1542,20 @@
                         </div>
                         <h4 class="fw-bold text-dark mb-2">KKN Kelompok 19</h4>
                         <p class="text-muted mb-0">UMBY 2025</p>
+                    </div>
+                </div>
+                
+                <!-- Logo 3: Logo KKN -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-left">
+                    <div class="logo-card text-center p-4 h-100 hover-lift">
+                        <div class="logo-container mb-3">
+                            <img src="{{ asset('images/logos/logo_kkn.png') }}" alt="Logo KKN" class="logo-img" onerror="this.style.display='none'">
+                            <div class="logo-fallback" style="display: none;">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <h4 class="fw-bold text-dark mb-2">KKNPPM</h4>
+                        <p class="text-muted mb-0">KKN-PPM UMBY 2025</p>
                     </div>
                 </div>
             </div>
@@ -1395,6 +1644,7 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
+            position: relative;
         }
         
         .video-container:hover {
@@ -1405,17 +1655,265 @@
         .video-container iframe {
             border-radius: 15px;
             transition: all 0.3s ease;
+            background: #000;
         }
         
         .video-fallback {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border: 2px dashed #dee2e6;
+            transition: all 0.3s ease;
         }
         
         .video-fallback:hover {
             background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
             border-color: #adb5bd;
+            transform: scale(1.02);
         }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            transition: all 0.3s ease;
+            animation: placeholderPulse 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shimmer 2s infinite;
+        }
+        
+        .video-placeholder:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .video-icon-container {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .video-placeholder:hover .video-icon-container {
+            transform: scale(1.1);
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        @keyframes placeholderPulse {
+            0%, 100% { 
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                border-color: #dee2e6;
+            }
+            50% { 
+                box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+                border-color: #adb5bd;
+            }
+        }
+        
+        /* Video Loading Animation */
+        .video-fallback i {
+            animation: videoBounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes videoBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Video Error Handling */
+        .video-container iframe[style*="display: none"] + .video-fallback {
+            display: flex !important;
+        }
+        
+        /* Video Thumbnail Styling */
+        .video-thumbnail-container {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .video-thumbnail-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.3s ease;
+        }
+        
+        .video-thumbnail:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Image overlay for better text readability */
+        .video-thumbnail .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .video-thumbnail:hover .image-overlay {
+            background: rgba(0,0,0,0.3);
+        }
+        
+        /* Image source badge */
+        .image-source {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        
+        .image-source:hover {
+            background: rgba(0,0,0,0.8);
+            transform: scale(1.05);
+        }
+        
+        .thumbnail-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            transition: all 0.3s ease;
+        }
+        
+        .video-thumbnail:hover .thumbnail-pattern {
+            opacity: 0.15;
+        }
+        
+        .play-icon-container {
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .play-icon-container:hover {
+            transform: scale(1.1);
+            background: rgba(255,255,255,1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        
+        .play-icon-container:active {
+            transform: scale(0.95);
+        }
+        
+        .video-duration {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .video-duration:hover {
+            background: rgba(0,0,0,0.8);
+            transform: scale(1.05);
+        }
+        
+        .video-source {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .video-source:hover {
+            background: rgba(255,255,255,1);
+            transform: scale(1.05);
+        }
+        
+        .video-info {
+            padding: 2rem;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .video-stats {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .video-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .video-stats span:hover {
+            color: var(--bs-primary);
+            transform: translateY(-2px);
+        }
+        
+
         
                  /* Logo Section Styling */
          .logo-card {
@@ -1424,6 +1922,10 @@
              box-shadow: 0 5px 20px rgba(0,0,0,0.1);
              transition: all 0.3s ease;
              border: 1px solid rgba(0,0,0,0.05);
+             height: 100%;
+             display: flex;
+             flex-direction: column;
+             justify-content: space-between;
          }
          
          .logo-container {
@@ -1436,6 +1938,7 @@
              border-radius: 15px;
              overflow: hidden;
              background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+             flex-shrink: 0;
          }
          
          .logo-img {
@@ -1443,6 +1946,7 @@
              height: 100%;
              object-fit: contain;
              padding: 10px;
+             transition: all 0.3s ease;
          }
          
          .logo-fallback {
@@ -1456,9 +1960,27 @@
              font-size: 3rem;
          }
          
- 
-        
-        /* Logo Section Responsive */
+         .logo-card h4 {
+             margin-top: auto;
+             margin-bottom: 0.5rem;
+         }
+         
+         .logo-card p {
+             margin-bottom: 0;
+         }
+         
+         /* Logo Section Responsive */
+         @media (max-width: 991px) {
+             .logo-section .row {
+                 justify-content: center;
+             }
+             
+             .col-lg-4.col-md-6 {
+                 max-width: 350px;
+                 margin: 0 auto 1.5rem auto;
+             }
+         }
+         
          @media (max-width: 768px) {
              .logo-container {
                  width: 100px;
@@ -1477,7 +1999,10 @@
                  font-size: 0.9rem;
              }
              
-
+             .col-lg-4.col-md-6 {
+                 max-width: 300px;
+                 margin: 0 auto 1rem auto;
+             }
          }
          
          @media (max-width: 576px) {
@@ -1501,198 +2026,40 @@
              .logo-card p {
                  font-size: 0.8rem;
              }
-         }
-        
-        .contact-item {
-            padding: 2rem 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .contact-item:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
-        .cta-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 10% 90%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 90% 10%, rgba(255,255,255,0.1) 0%, transparent 50%);
-            animation: ctaParticleFloat 15s ease-in-out infinite;
-        }
-        
-        @keyframes ctaParticleFloat {
-            0%, 100% { transform: translateX(0px) translateY(0px); }
-            25% { transform: translateX(-10px) translateY(-10px); }
-            50% { transform: translateX(10px) translateY(-5px); }
-            75% { transform: translateX(-5px) translateY(10px); }
-        }
-        
-                 /* Responsive improvements */
-         @media (max-width: 768px) {
-             .display-3 {
-                 font-size: 2.5rem;
-             }
              
-             .display-4 {
-                 font-size: 2rem;
-             }
-             
-             .hero-stats {
-                 flex-direction: column;
-                 gap: 1rem;
-             }
-             
-             .stat-item {
-                 display: flex;
-                 justify-content: space-between;
-                 align-items: center;
-                 padding: 0.5rem 1rem;
-                 background: rgba(255,255,255,0.1);
-                 border-radius: 10px;
-             }
-             
-             .feature-icon {
-                 width: 60px;
-                 height: 60px;
-                 font-size: 1.5rem;
-             }
-             
-             .contact-item {
-                 padding: 1.5rem 1rem;
-             }
-             
-             /* Video Section Mobile Responsive */
-             .video-container {
-                 margin: 0 1rem;
-             }
-             
-             /* UMKM Section Mobile Responsive */
-             .feature-card {
-                 padding: 1.5rem !important;
-             }
-             
-             .feature-card h5 {
-                 font-size: 1rem;
-                 margin-bottom: 0.5rem;
-             }
-             
-             .feature-card p {
-                 font-size: 0.85rem;
-                 line-height: 1.4;
-             }
-             
-             .feature-card .feature-icon {
-                 width: 50px;
-                 height: 50px;
-                 font-size: 1.25rem;
-                 margin-bottom: 1rem;
+             .col-lg-4.col-md-6 {
+                 max-width: 280px;
+                 margin: 0 auto 0.75rem auto;
              }
          }
-        
-                 @media (max-width: 576px) {
-             .display-3 {
-                 font-size: 2rem;
+         
+         @media (max-width: 480px) {
+             .logo-container {
+                 width: 70px;
+                 height: 70px;
              }
              
-             .display-4 {
+             .logo-fallback {
                  font-size: 1.75rem;
              }
              
-             .btn-lg {
-                 padding: 0.75rem 1.5rem;
-                 font-size: 0.9rem;
-             }
-             
-             .feature-icon {
-                 width: 50px;
-                 height: 50px;
-                 font-size: 1.25rem;
-             }
-             
-             /* UMKM Section Small Mobile Responsive */
-             .feature-card {
+             .logo-card {
                  padding: 1rem !important;
-                 margin-bottom: 1rem;
              }
              
-             .feature-card h5 {
+             .logo-card h4 {
                  font-size: 0.9rem;
-                 margin-bottom: 0.5rem;
-                 font-weight: 600;
              }
              
-             .feature-card p {
-                 font-size: 0.8rem;
-                 line-height: 1.3;
-                 margin-bottom: 0;
+             .logo-card p {
+                 font-size: 0.75rem;
              }
              
-             .feature-card .feature-icon {
-                 width: 40px;
-                 height: 40px;
-                 font-size: 1rem;
-                 margin-bottom: 0.75rem;
-             }
-             
-             /* UMKM Section Grid Mobile */
-             .row.g-4 {
-                 gap: 0.75rem !important;
-             }
-             
-             .col-lg-3.col-md-6 {
-                 margin-bottom: 0.75rem;
-             }
-                  }
-         
-         /* Tablet Responsive */
-         @media (max-width: 991px) and (min-width: 577px) {
-             /* UMKM Section Tablet Responsive */
-             .feature-card {
-                 padding: 2rem !important;
-             }
-             
-             .feature-card h5 {
-                 font-size: 1.1rem;
-                 margin-bottom: 0.75rem;
-             }
-             
-             .feature-card p {
-                 font-size: 0.9rem;
-                 line-height: 1.4;
-             }
-             
-             .feature-card .feature-icon {
-                 width: 55px;
-                 height: 55px;
-                 font-size: 1.4rem;
-                 margin-bottom: 1.25rem;
-             }
-             
-             /* UMKM Grid Tablet */
-             .col-lg-3.col-md-6 {
-                 margin-bottom: 1rem;
+             .col-lg-4.col-md-6 {
+                 max-width: 250px;
+                 margin: 0 auto 0.5rem auto;
              }
          }
-         
-         /* Performance improvements */
-        .feature-card, .stats-card {
-            will-change: transform;
-        }
-        
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
     </style>
 
 
@@ -1921,24 +2288,52 @@
             // Handle video iframe fallback
             const videoIframes = document.querySelectorAll('.video-container iframe');
             videoIframes.forEach(function(iframe) {
-                iframe.addEventListener('error', function() {
-                    this.style.display = 'none';
-                    const fallback = this.nextElementSibling;
-                    if (fallback && fallback.classList.contains('video-fallback')) {
-                        fallback.classList.remove('d-none');
+                // Show fallback initially
+                const fallback = iframe.nextElementSibling;
+                if (fallback && fallback.classList.contains('video-fallback')) {
+                    fallback.style.display = 'flex';
+                }
+                
+                // Hide fallback when iframe loads successfully
+                iframe.addEventListener('load', function() {
+                    this.style.display = 'block';
+                    if (fallback) {
+                        fallback.style.display = 'none';
                     }
                 });
                 
-                // Check if iframe loaded successfully after 5 seconds
+                iframe.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    if (fallback) {
+                        fallback.style.display = 'flex';
+                    }
+                });
+                
+                // Check if iframe loaded successfully after 8 seconds
                 setTimeout(function() {
                     if (iframe.contentWindow && iframe.contentWindow.location.href === 'about:blank') {
                         iframe.style.display = 'none';
-                        const fallback = iframe.nextElementSibling;
-                        if (fallback && fallback.classList.contains('video-fallback')) {
-                            fallback.classList.remove('d-none');
+                        if (fallback) {
+                            fallback.style.display = 'flex';
                         }
                     }
-                }, 5000);
+                }, 8000);
+                
+                // Additional check for YouTube embed issues
+                setTimeout(function() {
+                    try {
+                        if (iframe.src && iframe.src.includes('youtube.com') && iframe.contentWindow) {
+                            // Try to access iframe content
+                            iframe.contentWindow.postMessage('ping', '*');
+                        }
+                    } catch (e) {
+                        // If there's an error, show fallback
+                        iframe.style.display = 'none';
+                        if (fallback) {
+                            fallback.style.display = 'flex';
+                        }
+                    }
+                }, 3000);
             });
             
 
@@ -1953,6 +2348,126 @@
                     console.log('Stats container found, ensuring correct order...');
                 }
             }, 100);
+        }
+        
+        // Video Player Control Functions
+        function openVideo() {
+            // Get video URL from database
+            const videoUrl = '{{ $videoContent->video_url ?? "" }}';
+            
+            if (videoUrl && videoUrl.trim() !== '') {
+                // Open video in new tab
+                window.open(videoUrl, '_blank');
+            } else {
+                // Fallback: open YouTube homepage
+                window.open('https://www.youtube.com', '_blank');
+            }
+        }
+        
+        function showVideoPlayer() {
+            const videoPlayer = document.getElementById('videoPlayer');
+            const youtubeIframe = document.getElementById('youtubeIframe');
+            const videoLoading = document.getElementById('videoLoading');
+            
+            if (videoPlayer && youtubeIframe) {
+                // Get video URL from database
+                const videoUrl = '{{ $videoContent->video_url ?? "" }}';
+                
+                console.log('Video URL:', videoUrl); // Debug log
+                
+                if (videoUrl && videoUrl.trim() !== '') {
+                    try {
+                        // Convert to embed URL
+                        let embedUrl = videoUrl;
+                        
+                        if (videoUrl.includes('watch?v=')) {
+                            embedUrl = videoUrl.replace('watch?v=', 'embed/');
+                        } else if (videoUrl.includes('youtu.be/')) {
+                            embedUrl = videoUrl.replace('youtu.be/', 'www.youtube.com/embed/');
+                        } else if (videoUrl.includes('youtube.com/embed/')) {
+                            embedUrl = videoUrl;
+                        } else {
+                            // If URL format is unknown, try to extract video ID
+                            const videoIdMatch = videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]+)/);
+                            if (videoIdMatch) {
+                                embedUrl = 'https://www.youtube.com/embed/' + videoIdMatch[1];
+                            } else {
+                                throw new Error('Invalid YouTube URL format');
+                            }
+                        }
+                        
+                        console.log('Embed URL:', embedUrl); // Debug log
+                        
+                        // Show video player first
+                        videoPlayer.style.display = 'block';
+                        videoPlayer.style.opacity = '0';
+                        videoPlayer.style.transition = 'opacity 0.3s ease';
+                        
+                        // Show loading indicator
+                        if (videoLoading) {
+                            videoLoading.style.display = 'block';
+                        }
+                        
+                        // Set iframe source with parameters
+                        const finalUrl = embedUrl + '?rel=0&modestbranding=1&showinfo=0&autoplay=1&enablejsapi=1';
+                        youtubeIframe.src = finalUrl;
+                        
+                        // Fade in video player
+                        setTimeout(() => {
+                            videoPlayer.style.opacity = '1';
+                        }, 10);
+                        
+                        // Hide loading indicator after video loads
+                        youtubeIframe.onload = function() {
+                            console.log('Video iframe loaded successfully');
+                            if (videoLoading) {
+                                videoLoading.style.display = 'none';
+                            }
+                        };
+                        
+                        // Handle iframe errors
+                        youtubeIframe.onerror = function() {
+                            console.log('Video iframe failed to load');
+                            hideVideoPlayer();
+                            alert('Video tidak dapat dimuat. Silakan buka langsung di YouTube.');
+                        };
+                        
+                    } catch (error) {
+                        console.error('Error processing video URL:', error);
+                        hideVideoPlayer();
+                        alert('URL video tidak valid. Silakan buka langsung di YouTube.');
+                    }
+                } else {
+                    console.log('No video URL available');
+                    // Fallback: open YouTube directly
+                    window.open('https://www.youtube.com', '_blank');
+                }
+            } else {
+                console.error('Video player elements not found');
+                alert('Video player tidak tersedia. Silakan buka langsung di YouTube.');
+            }
+        }
+        
+        function hideVideoPlayer() {
+            const videoPlayer = document.getElementById('videoPlayer');
+            const youtubeIframe = document.getElementById('youtubeIframe');
+            const videoLoading = document.getElementById('videoLoading');
+            
+            if (videoPlayer && youtubeIframe) {
+                // Hide video player with smooth transition
+                videoPlayer.style.opacity = '0';
+                
+                setTimeout(() => {
+                    videoPlayer.style.display = 'none';
+                    // Clear iframe source to stop video
+                    youtubeIframe.src = '';
+                    
+                    // Reset loading indicator
+                    if (videoLoading) {
+                        videoLoading.style.display = 'block';
+                    }
+                }, 300);
+            }
         }
     </script>
 @endsection 

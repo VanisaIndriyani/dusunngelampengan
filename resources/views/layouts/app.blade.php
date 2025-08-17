@@ -492,75 +492,58 @@
             color: var(--primary-blue) !important;
         }
 
-        /* Logo Styling */
-        .navbar-logo {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
-        .logo-bantul, .logo-kelompok {
-            height: 40px;
-            width: auto;
-            object-fit: contain;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .logo-bantul {
-            background: linear-gradient(135deg, #ffd700, #ffed4e);
-            padding: 4px;
-        }
-
-        .logo-kelompok {
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
-            padding: 4px;
-        }
-
-        .logo-fallback, .kkn-logo-fallback, .ugm-logo-fallback {
-            font-size: 1.5rem;
-            color: var(--white);
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
-            padding: 8px;
-            border-radius: 8px;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
         .brand-text {
             display: flex;
             flex-direction: column;
             line-height: 1.2;
+            padding: 0.5rem 0;
+            position: relative;
         }
 
         .brand-title {
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--primary-blue);
+            margin: 0;
+            position: relative;
+        }
+
+        .brand-title::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 20px;
+            background: linear-gradient(135deg, var(--gradient-blue-2), var(--gradient-blue-4));
+            border-radius: 2px;
         }
 
         .brand-subtitle {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: var(--gray);
             font-weight: 500;
+            margin: 0;
+            margin-top: 2px;
         }
 
-        /* Responsive logo adjustments */
+        /* Responsive brand text adjustments */
         @media (max-width: 768px) {
-            .logo-bantul, .logo-kelompok {
-                height: 35px;
+            .brand-title {
+                font-size: 1.2rem;
             }
             
-            .brand-title {
-                font-size: 1.1rem;
+            .brand-title::before {
+                left: -12px;
+                width: 2px;
+                height: 18px;
             }
             
             .brand-subtitle {
-                font-size: 0.6rem;
+                font-size: 0.65rem;
             }
             
             .navbar-brand {
@@ -569,20 +552,18 @@
         }
 
         @media (max-width: 576px) {
-            .logo-bantul, .logo-kelompok {
-                height: 30px;
+            .brand-title {
+                font-size: 1rem;
             }
             
-            .brand-title {
-                font-size: 0.9rem;
+            .brand-title::before {
+                left: -10px;
+                width: 2px;
+                height: 16px;
             }
             
             .brand-subtitle {
-                font-size: 0.5rem;
-            }
-            
-            .navbar-logo.me-3 {
-                margin-right: 0.5rem !important;
+                font-size: 0.6rem;
             }
             
             .navbar-brand {
@@ -596,15 +577,17 @@
         
         @media (max-width: 480px) {
             .brand-title {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .brand-title::before {
+                left: -8px;
+                width: 2px;
+                height: 14px;
             }
             
             .brand-subtitle {
-                display: none;
-            }
-            
-            .logo-bantul, .logo-kelompok {
-                height: 25px;
+                font-size: 0.55rem;
             }
         }
 
@@ -1534,19 +1517,9 @@
         <div class="container">
             <a class="navbar-brand" href="{{ route('home') }}">
                 <div class="d-flex align-items-center">
-                    <!-- Logo Kabupaten Bantul -->
-                    <div class="navbar-logo me-2">
-                        <img src="{{ asset('images/logos/logo_bantul.png') }}" alt="Logo Kabupaten Bantul" class="logo-bantul" onerror="this.style.display='none'">
-                        <i class="fas fa-shield-alt logo-fallback" style="display: none;"></i>
-                    </div>
-                    <!-- Logo Kelompok KKN -->
-                    <div class="navbar-logo me-3">
-                        <img src="{{ asset('images/logos/logo_kelompok.png') }}" alt="Logo Kelompok KKN" class="logo-kelompok" onerror="this.style.display='none'">
-                        <i class="fas fa-users logo-fallback" style="display: none;"></i>
-                    </div>
                     <div class="brand-text">
                         <span class="brand-title">Dusun Ngelampengan</span>
-                        <small class="brand-subtitle d-none d-sm-inline">KKN UMBY 2025</small>
+                       
                     </div>
                 </div>
             </a>
@@ -1622,34 +1595,10 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Logo Fallback Script -->
+    <!-- Navigation Script -->
     <script>
-        // Handle logo fallback when images fail to load
+        // Handle navigation improvements
         document.addEventListener('DOMContentLoaded', function() {
-            const logoImages = document.querySelectorAll('.logo-bantul, .logo-kelompok, .kkn-logo, .ugm-logo, .logo-img');
-            
-            logoImages.forEach(function(img) {
-                img.addEventListener('error', function() {
-                    // Hide the failed image
-                    this.style.display = 'none';
-                    
-                    // Show the fallback icon
-                    const fallback = this.parentElement.querySelector('.logo-fallback, .kkn-logo-fallback, .ugm-logo-fallback');
-                    if (fallback) {
-                        fallback.style.display = 'flex';
-                    }
-                });
-                
-                // Check if image loaded successfully
-                if (img.complete && img.naturalHeight === 0) {
-                    // Image failed to load
-                    img.style.display = 'none';
-                    const fallback = img.parentElement.querySelector('.logo-fallback, .kkn-logo-fallback, .ugm-logo-fallback');
-                    if (fallback) {
-                        fallback.style.display = 'flex';
-                    }
-                }
-            });
             
             // Mobile navigation improvements
             const navbarToggler = document.querySelector('.navbar-toggler');

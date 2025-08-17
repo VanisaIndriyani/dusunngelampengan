@@ -131,12 +131,14 @@
                 padding: 0.75rem 1.5rem !important;
             }
             
-            /* Stats Grid Mobile */
+            /* Stats Grid Mobile - All sections */
             .stats-grid {
                 gap: 0.75rem !important;
             }
             
-            .stats-card {
+            .stats-card,
+            .bg-light-green .stats-card,
+            .py-5 .stats-card {
                 height: 120px !important;
                 padding: 0.75rem !important;
             }
@@ -175,12 +177,14 @@
                 padding: 0.5rem 1rem !important;
             }
             
-            /* Stats Grid Small Mobile */
+            /* Stats Grid Small Mobile - All sections */
             .stats-grid {
                 gap: 0.5rem !important;
             }
             
-            .stats-card {
+            .stats-card,
+            .bg-light-green .stats-card,
+            .py-5 .stats-card {
                 height: 100px !important;
                 padding: 0.5rem !important;
             }
@@ -203,12 +207,14 @@
         }
         
         @media (max-width: 480px) {
-            /* Stats Grid Extra Small Mobile */
+            /* Stats Grid Extra Small Mobile - All sections */
             .stats-grid {
                 gap: 0.25rem !important;
             }
             
-            .stats-card {
+            .stats-card,
+            .bg-light-green .stats-card,
+            .py-5 .stats-card {
                 height: 90px !important;
                 padding: 0.4rem !important;
             }
@@ -363,6 +369,24 @@
             padding: 1rem !important;
         }
         
+        /* Ensure all stats cards in about page use consistent styling */
+        .bg-light-green .stats-card,
+        .py-5 .stats-card {
+            background: var(--white) !important;
+            border-radius: 15px !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08) !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+            overflow: hidden !important;
+            position: relative !important;
+            height: 140px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            padding: 1rem !important;
+        }
+        
         .stats-card::before {
             content: '' !important;
             position: absolute !important;
@@ -425,7 +449,9 @@
                 gap: 1.5rem !important;
             }
             
-            .stats-card {
+            .stats-card,
+            .bg-light-green .stats-card,
+            .py-5 .stats-card {
                 height: 160px !important;
                 padding: 1.5rem !important;
             }
@@ -451,7 +477,9 @@
                 gap: 1rem !important;
             }
             
-            .stats-card {
+            .stats-card,
+            .bg-light-green .stats-card,
+            .py-5 .stats-card {
                 height: 140px !important;
                 padding: 1rem !important;
             }
@@ -532,12 +560,14 @@
                 padding-bottom: 1.5rem !important;
             }
             
-            /* Stats Grid Landscape */
+            /* Stats Grid Landscape - All sections */
             .stats-grid {
                 gap: 0.5rem !important;
             }
             
-            .stats-card {
+            .stats-card,
+            .bg-light-green .stats-card,
+            .py-5 .stats-card {
                 height: 100px !important;
                 padding: 0.5rem !important;
             }
@@ -903,40 +933,40 @@
                         Berbagai organisasi kemasyarakatan aktif dalam mendorong pembangunan desa, 
                         mulai dari kelompok tani, pengrajin, hingga organisasi pemuda yang inovatif.
                     </p>
-                    <div class="row g-3">
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="stats-card text-center p-3 hover-lift">
-                                <div class="stats-icon mb-2">
+                    <div class="stats-grid">
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-seedling text-success"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-3 text-success counter" data-target="5">0</div>
+                                <div class="stats-number fw-bold text-success counter" data-target="5">0</div>
                                 <div class="stats-label text-muted">Kelompok Tani</div>
                             </div>
                         </div>
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="stats-card text-center p-3 hover-lift">
-                                <div class="stats-icon mb-2">
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-hammer text-warning"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-3 text-warning counter" data-target="3">0</div>
+                                <div class="stats-number fw-bold text-warning counter" data-target="3">0</div>
                                 <div class="stats-label text-muted">Kelompok Pengrajin</div>
                             </div>
                         </div>
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="stats-card text-center p-3 hover-lift">
-                                <div class="stats-icon mb-2">
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-users text-info"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-3 text-info counter" data-target="2">0</div>
+                                <div class="stats-number fw-bold text-info counter" data-target="2">0</div>
                                 <div class="stats-label text-muted">Organisasi Pemuda</div>
                             </div>
                         </div>
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="400">
-                            <div class="stats-card text-center p-3 hover-lift">
-                                <div class="stats-icon mb-2">
+                        <div class="stats-item" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="stats-card text-center hover-lift">
+                                <div class="stats-icon">
                                     <i class="fas fa-handshake text-primary"></i>
                                 </div>
-                                <div class="stats-number fw-bold fs-3 text-primary counter" data-target="1">0</div>
+                                <div class="stats-number fw-bold text-primary counter" data-target="1">0</div>
                                 <div class="stats-label text-muted">Koperasi Desa</div>
                             </div>
                         </div>
@@ -1020,22 +1050,22 @@
                             peningkatan ekonomi lokal melalui berbagai inovasi dan pelatihan yang 
                             disesuaikan dengan potensi dan kebutuhan masyarakat setempat.
                         </p>
-                        <div class="row g-3">
-                            <div class="col-6" data-aos="zoom-in" data-aos-delay="100">
-                                <div class="stats-card text-center p-3 hover-lift">
-                                    <div class="stats-icon mb-2">
+                        <div class="stats-grid">
+                            <div class="stats-item" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="stats-card text-center hover-lift">
+                                    <div class="stats-icon">
                                         <i class="fas fa-user-graduate text-primary"></i>
                                     </div>
-                                    <div class="stats-number fw-bold fs-3 text-primary counter" data-target="8">0</div>
+                                    <div class="stats-number fw-bold text-primary counter" data-target="8">0</div>
                                     <div class="stats-label text-muted">Mahasiswa KKN</div>
                                 </div>
                             </div>
-                            <div class="col-6" data-aos="zoom-in" data-aos-delay="200">
-                                <div class="stats-card text-center p-3 hover-lift">
-                                    <div class="stats-icon mb-2">
+                            <div class="stats-item" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="stats-card text-center hover-lift">
+                                    <div class="stats-icon">
                                         <i class="fas fa-calendar-check text-success"></i>
                                     </div>
-                                    <div class="stats-number fw-bold fs-3 text-success counter" data-target="45">0</div>
+                                    <div class="stats-number fw-bold text-success counter" data-target="45">0</div>
                                     <div class="stats-label text-muted">Hari Program</div>
                                 </div>
                             </div>
@@ -1046,19 +1076,36 @@
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="feature-card p-4 hover-lift">
                         <div class="text-center mb-4">
-                            <div class="d-flex justify-content-center align-items-center mb-4">
-                                <!-- Logo KKN -->
-                                <div class="me-4">
-                                    <img src="{{ asset('images/logos/logo_kelompok.png') }}" alt="Logo KKN UMBY" class="kkn-logo" onerror="this.style.display='none'">
-                                    <div class="kkn-logo-fallback" style="display: none;">
-                                        <i class="fas fa-users-cog"></i>
+                            <div class="logo-section mb-4">
+                                <div class="row justify-content-center align-items-center g-3">
+                                    <!-- Logo KKN Kelompok -->
+                                    <div class="col-auto" data-aos="fade-right">
+                                        <div class="logo-card-small text-center p-3 bg-warning rounded-3 shadow-sm">
+                                            <img src="{{ asset('images/logos/logo_kelompok.png') }}" alt="Logo KKN UMBY" class="kkn-logo-small" onerror="this.style.display='none'">
+                                            <div class="kkn-logo-fallback-small" style="display: none;">
+                                                <i class="fas fa-users-cog text-white"></i>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- Logo UMBY -->
-                                <div>
-                                    <img src="{{ asset('images/logos/logo_bantul.png') }}" alt="Logo UMBY" class="ugm-logo" onerror="this.style.display='none'">
-                                    <div class="ugm-logo-fallback" style="display: none;">
-                                        <i class="fas fa-university"></i>
+                                    
+                                    <!-- Logo Kabupaten Bantul -->
+                                    <div class="col-auto" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="logo-card-small text-center p-3 bg-primary rounded-3 shadow-sm">
+                                            <img src="{{ asset('images/logos/logo_bantul.png') }}" alt="Logo Kabupaten Bantul" class="kkn-logo-small" onerror="this.style.display='none'">
+                                            <div class="kkn-logo-fallback-small" style="display: none;">
+                                                <i class="fas fa-shield-alt text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Logo KKN -->
+                                    <div class="col-auto" data-aos="fade-left" data-aos-delay="200">
+                                        <div class="logo-card-small text-center p-3 bg-info rounded-3 shadow-sm">
+                                            <img src="{{ asset('images/logos/logo_kkn.png') }}" alt="Logo KKN" class="kkn-logo-small" onerror="this.style.display='none'">
+                                            <div class="kkn-logo-fallback-small" style="display: none;">
+                                                <i class="fas fa-graduation-cap text-white"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1361,6 +1408,85 @@
         @media (max-width: 576px) {
             main {
                 margin-top: 65px !important;
+            }
+        }
+
+        /* Logo Section Styling */
+        .logo-section {
+            margin-bottom: 2rem;
+        }
+        
+        .logo-card-small {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .logo-card-small:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: rgba(255,255,255,0.3);
+        }
+        
+        .kkn-logo-small {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+            border-radius: 50%;
+        }
+        
+        .kkn-logo-fallback-small {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        /* Background colors for logo cards */
+        .bg-warning {
+            background: linear-gradient(135deg, #ffc107, #ff8f00) !important;
+        }
+        
+        .bg-primary {
+            background: linear-gradient(135deg, #007bff, #0056b3) !important;
+        }
+        
+        .bg-info {
+            background: linear-gradient(135deg, #17a2b8, #138496) !important;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo-card-small {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .kkn-logo-fallback-small {
+                font-size: 1.75rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-card-small {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .kkn-logo-fallback-small {
+                font-size: 1.5rem;
+            }
+            
+            .logo-section .row {
+                gap: 0.5rem !important;
             }
         }
     </style>
