@@ -501,17 +501,7 @@
                     </button>
                 </form>
 
-                <div class="credentials-info">
-                    <h6><i class="fas fa-info-circle me-2"></i>Informasi Login Default</h6>
-                    <div class="credential-item">
-                        <i class="fas fa-envelope"></i>
-                        <strong>Email:</strong> admin@dusunnglampengan.com
-                    </div>
-                    <div class="credential-item">
-                        <i class="fas fa-key"></i>
-                        <strong>Password:</strong> admin123
-                    </div>
-                </div>
+               
             </div>
         </div>
     </div>
