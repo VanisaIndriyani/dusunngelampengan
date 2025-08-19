@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tentang Kami - Dusun Ngelampengan')
+@section('title', 'Tentang Kami - Dusun Nglampengan')
 
 @section('content')
     <!-- Mobile Responsive CSS -->
@@ -604,7 +604,7 @@
                         </span>
                     </div>
                     <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInUp">
-                        Mari Berkunjung ke <span class="text-white gradient-text">Dusun Ngelampengan</span>
+                        Mari Berkunjung ke <span class="text-white gradient-text">Dusun Nglampengan</span>
                     </h1>
                     <p class="lead mb-5 fs-5 animate__animated animate__fadeInUp animate__delay-1s">
                         Rasakan kehangatan masyarakat kami dan lihat langsung potensi UMKM yang berkembang pesat di Kapanewon Dlingo
@@ -653,10 +653,10 @@
                             </span>
                         </div>
                         <h2 class="display-4 fw-bold text-dark mb-4">
-                            Sejarah <span class="text-primary">Dusun Ngelampengan</span>
+                            Sejarah <span class="text-primary">Dusun Nglampengan</span>
                         </h2>
                         <p class="lead text-muted mb-4 fs-5">
-                            Dusun Ngelampengan memiliki sejarah yang berkaitan erat dengan pembentukan wilayah Kapanewon Dlingo. 
+                            Dusun Nglampengan memiliki sejarah yang berkaitan erat dengan pembentukan wilayah Kapanewon Dlingo. 
                             Awalnya, wilayah Dlingo merupakan bagian dari enclave (daerah kantong) Imogiri yang berada 
                             di bawah naungan Kasunanan Surakarta.
                         </p>
@@ -667,7 +667,7 @@
                             dan budaya masyarakat setempat.
                         </p>
                         <p class="text-muted">
-                            Saat ini, Dusun Ngelampengan terus berkembang dengan semangat gotong royong dan 
+                            Saat ini, Dusun Nglampengan terus berkembang dengan semangat gotong royong dan 
                             inovasi dalam mengelola sumber daya alam secara berkelanjutan, sambil tetap 
                             mempertahankan nilai-nilai budaya dan kearifan lokal yang telah diwariskan 
                             dari generasi ke generasi.
@@ -735,7 +735,7 @@
                     Visi & Misi
                 </h2>
                 <p class="lead text-muted fs-5">
-                    Arah pengembangan Dusun Ngelampengan ke depannya
+                    Arah pengembangan Dusun Nglampengan ke depannya
                 </p>
             </div>
             
@@ -802,7 +802,7 @@
                     Budaya & Kearifan Lokal
                 </h2>
                 <p class="lead text-muted fs-5">
-                                         Nilai-nilai budaya yang menjadi fondasi kehidupan masyarakat Dusun Ngelampengan, Kapanewon Dlingo
+                                         Nilai-nilai budaya yang menjadi fondasi kehidupan masyarakat Dusun Nglampengan, Kapanewon Dlingo
                 </p>
             </div>
             
@@ -860,7 +860,7 @@
                     Potensi Ekonomi
                 </h2>
                 <p class="lead text-muted fs-5">
-                    Berbagai sektor ekonomi yang menjadi tulang punggung Dusun Ngelampengan
+                    Berbagai sektor ekonomi yang menjadi tulang punggung Dusun Nglampengan
                 </p>
             </div>
             
@@ -925,7 +925,7 @@
                         Komunitas yang Solid
                     </h2>
                     <p class="lead text-muted mb-4 fs-5">
-                        Masyarakat Dusun Ngelampengan dikenal dengan semangat kebersamaan yang tinggi. 
+                        Masyarakat Dusun Nglampengan dikenal dengan semangat kebersamaan yang tinggi. 
                         Setiap warga saling mendukung dalam mengembangkan potensi desa dan meningkatkan 
                         kesejahteraan bersama.
                     </p>
@@ -1030,7 +1030,7 @@
                     KKN UMBY 2025
                 </h2>
                 <p class="lead text-muted fs-5">
-                    Program Kuliah Kerja Nyata Universitas Mercu Buana Yogyakarta di Dusun Ngelampengan
+                    Program Kuliah Kerja Nyata Universitas Mercu Buana Yogyakarta di Dusun Nglampengan
                 </p>
             </div>
             
@@ -1046,9 +1046,9 @@
                             dalam mengaplikasikan ilmu pengetahuan dan teknologi di masyarakat.
                         </p>
                         <p class="text-muted mb-4">
-                            Di Dusun Ngelampengan, program KKN UMBY 2025 fokus pada pengembangan UMKM dan 
-                            peningkatan ekonomi lokal melalui berbagai inovasi dan pelatihan yang 
-                            disesuaikan dengan potensi dan kebutuhan masyarakat setempat.
+                                                    Di Dusun Nglampengan, program KKN UMBY 2025 fokus pada pengembangan UMKM dan 
+                        peningkatan ekonomi lokal melalui berbagai inovasi dan pelatihan yang 
+                        disesuaikan dengan potensi dan kebutuhan masyarakat setempat.
                         </p>
                         <div class="stats-grid">
                             <div class="stats-item" data-aos="zoom-in" data-aos-delay="100">
@@ -1150,10 +1150,10 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8" data-aos="fade-up">
                     <h2 class="display-4 fw-bold mb-4">
-                        Mari Jelajahi UMKM Dusun Ngelampengan
+                        Mari Jelajahi UMKM Dusun Nglampengan
                     </h2>
                     <p class="lead mb-5 fs-5">
-                        Temukan berbagai produk berkualitas dari UMKM lokal Dusun Ngelampengan, Kapanewon Dlingo
+                        Temukan berbagai produk berkualitas dari UMKM lokal Dusun Nglampengan, Kapanewon Dlingo
                     </p>
                     <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
                         <a href="{{ route('umkm') }}" class="btn btn-white btn-lg px-5 py-3 fw-bold text-primary hover-lift">

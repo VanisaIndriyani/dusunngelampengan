@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Beranda - Dusun Ngelampengan')
+@section('title', 'Beranda - Dusun Nglampengan')
 
 @section('content')
     <!-- Hero Section -->
@@ -17,7 +17,7 @@
                         </span>
                     </div>
                     <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInUp">
-                        Selamat Datang di <span class="text-white gradient-text">Dusun Ngelampengan</span>
+                        Selamat Datang di <span class="text-white gradient-text">Dusun Nglampengan</span>
                     </h1>
                     <p class="lead mb-5 fs-5 animate__animated animate__fadeInUp animate__delay-1s">
                         Dusun yang kaya akan sejarah dan budaya, dengan UMKM yang berkembang pesat di wilayah Kapanewon Dlingo, Daerah Istimewa Yogyakarta
@@ -1283,7 +1283,7 @@
                     </span>
                 </div>
                 <h2 class="display-4 fw-bold text-dark mb-3">
-                    Keunggulan <span class="text-primary">Dusun Ngelampengan</span>
+                                            Keunggulan <span class="text-primary">Dusun Nglampengan</span>
                 </h2>
                 <p class="lead text-muted fs-5">
                     Kami bangga dengan berbagai keunggulan yang dimiliki dusun kami di Kapanewon Dlingo
@@ -1291,7 +1291,24 @@
             </div>
             
             <div class="row g-4">
-                <!-- Row 1: Alam yang Asri & Masyarakat Solid -->
+                @forelse($kegiatan as $index => $item)
+                <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
+                    <div class="feature-card h-100 p-4 p-lg-5 text-center hover-lift">
+                        <div class="feature-icon mb-3 mb-lg-4">
+                            @if($item->icon)
+                                <i class="{{ $item->icon }}"></i>
+                            @else
+                                <i class="fas fa-star"></i>
+                            @endif
+                        </div>
+                        <h4 class="fw-bold text-dark mb-2 mb-lg-3">{{ $item->judul }}</h4>
+                        <p class="text-muted mb-0">
+                            {{ $item->deskripsi }}
+                        </p>
+                    </div>
+                </div>
+                @empty
+                <!-- Fallback content if no kegiatan -->
                 <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-card h-100 p-4 p-lg-5 text-center hover-lift">
                         <div class="feature-icon mb-3 mb-lg-4">
@@ -1316,7 +1333,6 @@
                     </div>
                 </div>
                 
-                <!-- Row 2: UMKM Berkembang & Budaya Lestari -->
                 <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-card h-100 p-4 p-lg-5 text-center hover-lift">
                         <div class="feature-icon mb-3 mb-lg-4">
@@ -1340,6 +1356,7 @@
                         </p>
                     </div>
                 </div>
+                @endforelse
             </div>
         </div>
     </section>
@@ -1357,10 +1374,10 @@
                             </span>
                         </div>
                         <h2 class="display-4 fw-bold text-dark mb-4">
-                            Tentang <span class="text-primary">Dusun Ngelampengan</span>
+                            Tentang <span class="text-primary">Dusun Nglampengan</span>
                         </h2>
                         <p class="lead text-muted mb-4 fs-5">
-                            Dusun Ngelampengan memiliki sejarah yang berkaitan erat dengan pembentukan wilayah Kapanewon Dlingo.
+                            Dusun Nglampengan memiliki sejarah yang berkaitan erat dengan pembentukan wilayah Kapanewon Dlingo.
                         </p>
                         <p class="text-muted mb-4">
                             Saat ini, dusun kami terus berkembang dengan semangat gotong royong dan inovasi dalam mengelola 
@@ -1431,10 +1448,10 @@
                     </span>
                 </div>
                 <h2 class="display-4 fw-bold text-dark mb-3">
-                    UMKM <span class="text-primary">Dusun Ngelampengan</span>
+                                            UMKM <span class="text-primary">Dusun Nglampengan</span>
                 </h2>
                 <p class="lead text-muted fs-5">
-                    Berbagai produk berkualitas dari UMKM lokal Dusun Ngelampengan, Kapanewon Dlingo
+                                            Berbagai produk berkualitas dari UMKM lokal Dusun Nglampengan, Kapanewon Dlingo
                 </p>
             </div>
             
@@ -1508,10 +1525,10 @@
                     </span>
                 </div>
                 <h2 class="display-4 fw-bold text-dark mb-3">
-                    Video Profil Dusun Ngelampengan
+                                            Video Profil Dusun Nglampengan
                 </h2>
                 <p class="lead text-muted fs-5">
-                    Tonton video profil lengkap Dusun Ngelampengan yang menampilkan keindahan alam, budaya, dan UMKM yang berkembang di wilayah Kapanewon Dlingo, Daerah Istimewa Yogyakarta.
+                                            Tonton video profil lengkap Dusun Nglampengan yang menampilkan keindahan alam, budaya, dan UMKM yang berkembang di wilayah Kapanewon Dlingo, Daerah Istimewa Yogyakarta.
                 </p>
             </div>
             
@@ -1564,10 +1581,10 @@
                         <div class="video-info" style="padding: 2rem; background: white;">
                             <div class="row align-items-center">
                                 <div class="col-lg-8">
-                                    <h3 class="fw-bold text-dark mb-2 fs-4">Profil Dusun Ngelampengan - Keindahan Alam & UMKM</h3>
+                                    <h3 class="fw-bold text-dark mb-2 fs-4">Profil Dusun Nglampengan - Keindahan Alam & UMKM</h3>
                                     <p class="text-muted mb-2">
                                         <i class="fab fa-youtube text-danger me-2"></i>
-                                        <span class="fw-semibold">Dusun Ngelampengan Official</span>
+                                        <span class="fw-semibold">Dusun Nglampengan Official</span>
                                     </p>
                                     <div class="video-stats d-flex align-items-center gap-4 text-muted">
                                         <span><i class="fas fa-eye me-1"></i>2.5K views</span>

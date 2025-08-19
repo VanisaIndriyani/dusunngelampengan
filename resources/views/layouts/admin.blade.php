@@ -569,6 +569,12 @@
                     </a>
                 </div>
                 <div class="nav-item">
+                    <a href="{{ route('admin.kegiatan.index') }}" class="nav-link {{ request()->routeIs('admin.kegiatan.*') ? 'active' : '' }}">
+                        <i class="fas fa-tasks nav-icon"></i>
+                        <span class="nav-text">Data Kegiatan</span>
+                    </a>
+                </div>
+                <div class="nav-item">
                     <a href="{{ route('admin.content') }}" class="nav-link {{ request()->routeIs('admin.content.*') ? 'active' : '' }}">
                         <i class="fas fa-video nav-icon"></i>
                                                         <span class="nav-text">Data Video</span>

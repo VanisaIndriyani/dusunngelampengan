@@ -46,6 +46,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::put('/content/{id}', [AdminController::class, 'contentUpdate'])->name('content.update');
     Route::delete('/content/{id}', [AdminController::class, 'contentDestroy'])->name('content.destroy');
     
+    // Kegiatan Management
+    Route::resource('kegiatan', \App\Http\Controllers\Admin\KegiatanController::class);
+    Route::post('/kegiatan/update-urutan', [\App\Http\Controllers\Admin\KegiatanController::class, 'updateUrutan'])->name('kegiatan.update-urutan');
+    
     // Settings
     Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
     Route::put('/settings', [AdminController::class, 'settingsUpdate'])->name('settings.update');

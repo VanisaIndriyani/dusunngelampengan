@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 // Product model removed
 use App\Models\UMKM;
 use App\Models\Content;
+use App\Models\Kegiatan;
 
 class HomeController extends Controller
 {
@@ -35,6 +36,9 @@ class HomeController extends Controller
             ->take(4)
             ->get();
 
+        // Get active kegiatan for features section
+        $kegiatan = Kegiatan::aktif()->urut()->take(4)->get();
+
         return view('home', compact(
             'heroContent',
             'aboutContent', 
@@ -46,7 +50,8 @@ class HomeController extends Controller
             'galleryContent',
             'videoContent',
             'featuredUMKM',
-            'additionalUMKM'
+            'additionalUMKM',
+            'kegiatan'
         ));
     }
 } 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Admin - Dusun Ngelampengan</title>
+    <title>Login Admin - Dusun Nglampengan</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -451,7 +451,7 @@
                     <i class="fas fa-user-shield"></i>
                 </div>
                 <h3>Admin Panel</h3>
-                <p>Dusun Ngelampengan</p>
+                <p>Dusun Nglampengan</p>
                
             </div>
             

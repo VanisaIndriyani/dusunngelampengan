@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'UMKM - Dusun Ngelampengan')
+@section('title', 'UMKM - Dusun Nglampengan')
 
 @section('content')
     <!-- Hero Section -->
@@ -17,7 +17,7 @@
                         </span>
                     </div>
                     <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInUp">
-                        UMKM Dusun Ngelampengan
+                        UMKM Dusun Nglampengan
                     </h1>
                     <p class="lead mb-4 fs-5 animate__animated animate__fadeInUp animate__delay-1s">
                         Temukan berbagai produk berkualitas dari usaha mikro, kecil, dan menengah lokal kami
