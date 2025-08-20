@@ -57,20 +57,18 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="icon" class="form-label">Icon FontAwesome</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fas fa-icons"></i></span>
-                                                <input type="text" 
-                                                       class="form-control @error('icon') is-invalid @enderror" 
-                                                       id="icon" 
-                                                       name="icon" 
-                                                       value="{{ old('icon', $kegiatan->icon) }}" 
-                                                       placeholder="fas fa-star">
-                                            </div>
+                                            <label for="urutan" class="form-label">Urutan</label>
+                                            <input type="number" 
+                                                   class="form-control @error('urutan') is-invalid @enderror" 
+                                                   id="urutan" 
+                                                   name="urutan" 
+                                                   value="{{ old('urutan', $kegiatan->urutan) }}" 
+                                                   min="1" 
+                                                   placeholder="Urutan tampilan">
                                             <small class="form-text text-muted">
-                                                Contoh: fas fa-star, fas fa-tree, fas fa-hands-helping
+                                                Kosongkan untuk urutan terakhir
                                             </small>
-                                            @error('icon')
+                                            @error('urutan')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
@@ -118,7 +116,7 @@
                                         <div class="card-body text-center">
                                             <div id="imagePreview" class="mb-3">
                                                 @if($kegiatan->gambar)
-                                                    <img src="{{ asset('storage/kegiatan/' . $kegiatan->gambar) }}" 
+                                                    <img src="{{ asset('storage/' . $kegiatan->gambar) }}" 
                                                          alt="{{ $kegiatan->judul }}" 
                                                          class="img-fluid rounded" 
                                                          style="max-width: 200px; max-height: 200px; object-fit: cover;">
@@ -151,21 +149,7 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label">Preview Icon</label>
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <div id="iconPreview" class="mb-2">
-                                                @if($kegiatan->icon)
-                                                    <i class="{{ $kegiatan->icon }} fa-3x text-primary"></i>
-                                                @else
-                                                    <i class="fas fa-question-circle fa-3x text-muted"></i>
-                                                @endif
-                                            </div>
-                                            <small class="text-muted">Icon akan muncul di sini</small>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
 
@@ -211,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Show current image if exists
             @if($kegiatan->gambar)
                 imagePreview.innerHTML = `
-                    <img src="{{ asset('storage/kegiatan/' . $kegiatan->gambar) }}" 
+                                            <img src="{{ asset('storage/' . $kegiatan->gambar) }}" 
                          alt="{{ $kegiatan->judul }}" 
                          class="img-fluid rounded" 
                          style="max-width: 200px; max-height: 200px; object-fit: cover;">
@@ -227,18 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Icon preview
-    const iconInput = document.getElementById('icon');
-    const iconPreview = document.getElementById('iconPreview');
-    
-    iconInput.addEventListener('input', function() {
-        const iconClass = this.value.trim();
-        if (iconClass) {
-            iconPreview.innerHTML = `<i class="${iconClass} fa-3x text-primary"></i>`;
-        } else {
-            iconPreview.innerHTML = `<i class="fas fa-question-circle fa-3x text-muted"></i>`;
-        }
-    });
+
 });
 </script>
 @endsection

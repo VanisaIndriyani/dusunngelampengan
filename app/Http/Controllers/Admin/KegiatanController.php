@@ -35,7 +35,6 @@ class KegiatanController extends Controller
         $validator = Validator::make($request->all(), [
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'icon' => 'nullable|string|max:100',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'status' => 'required|in:aktif,nonaktif',
             'urutan' => 'nullable|integer|min:0'
@@ -53,7 +52,7 @@ class KegiatanController extends Controller
         if ($request->hasFile('gambar')) {
             $image = $request->file('gambar');
             $imageName = time() . '_' . $image->getClientOriginalName();
-            $image->storeAs('public/kegiatan', $imageName);
+            $image->storeAs('', $imageName, 'public');
             $data['gambar'] = $imageName;
         }
 
@@ -92,7 +91,6 @@ class KegiatanController extends Controller
         $validator = Validator::make($request->all(), [
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'icon' => 'nullable|string|max:100',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'status' => 'required|in:aktif,nonaktif',
             'urutan' => 'nullable|integer|min:0'
@@ -109,13 +107,13 @@ class KegiatanController extends Controller
         // Handle image upload
         if ($request->hasFile('gambar')) {
             // Delete old image
-            if ($kegiatan->gambar && Storage::exists('public/kegiatan/' . $kegiatan->gambar)) {
-                Storage::delete('public/kegiatan/' . $kegiatan->gambar);
+            if ($kegiatan->gambar && Storage::disk('public')->exists($kegiatan->gambar)) {
+                Storage::disk('public')->delete($kegiatan->gambar);
             }
             
             $image = $request->file('gambar');
             $imageName = time() . '_' . $image->getClientOriginalName();
-            $image->storeAs('public/kegiatan', $imageName);
+            $image->storeAs('', $imageName, 'public');
             $data['gambar'] = $imageName;
         }
 
@@ -131,8 +129,8 @@ class KegiatanController extends Controller
     public function destroy(Kegiatan $kegiatan)
     {
         // Delete image if exists
-        if ($kegiatan->gambar && Storage::exists('public/kegiatan/' . $kegiatan->gambar)) {
-            Storage::delete('public/kegiatan/' . $kegiatan->gambar);
+        if ($kegiatan->gambar && Storage::disk('public')->exists($kegiatan->gambar)) {
+            Storage::disk('public')->delete($kegiatan->gambar);
         }
 
         $kegiatan->delete();

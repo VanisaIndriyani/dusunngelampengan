@@ -6,7 +6,7 @@ use App\Http\Controllers\UMKMController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\RTController;
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/beranda', [HomeController::class, 'index'])->name('beranda');
@@ -53,25 +53,14 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     // Settings
     Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
     Route::put('/settings', [AdminController::class, 'settingsUpdate'])->name('settings.update');
+    
+    // User Management
+    Route::get('/users', [AdminController::class, 'users'])->name('users.index');
+    Route::get('/users/create', [AdminController::class, 'usersCreate'])->name('users.create');
+    Route::post('/users', [AdminController::class, 'usersStore'])->name('users.store');
+    Route::get('/users/{id}/edit', [AdminController::class, 'usersEdit'])->name('users.edit');
+    Route::put('/users/{id}', [AdminController::class, 'usersUpdate'])->name('users.update');
+    Route::delete('/users/{id}', [AdminController::class, 'usersDestroy'])->name('users.destroy');
 });
 
-// RT Routes
-Route::prefix('rt')->name('rt.')->middleware(['auth', 'rt'])->group(function () {
-    Route::get('/', [RTController::class, 'dashboard'])->name('dashboard');
-    Route::get('/dashboard', [RTController::class, 'dashboard'])->name('dashboard');
-    
 
-    
-    // RT UMKM Management
-    Route::get('/umkm', [RTController::class, 'umkm'])->name('umkm.index');
-    Route::get('/umkm/create', [RTController::class, 'umkmCreate'])->name('umkm.create');
-    Route::post('/umkm', [RTController::class, 'umkmStore'])->name('umkm.store');
-    Route::get('/umkm/{id}/edit', [RTController::class, 'umkmEdit'])->name('umkm.edit');
-    Route::put('/umkm/{id}', [RTController::class, 'umkmUpdate'])->name('umkm.update');
-    Route::delete('/umkm/{id}', [RTController::class, 'umkmDestroy'])->name('umkm.destroy');
-    
-    // RT Profile Management
-    Route::get('/profile', [RTController::class, 'profile'])->name('profile');
-    Route::put('/profile', [RTController::class, 'profileUpdate'])->name('profile.update');
-    Route::put('/change-password', [RTController::class, 'changePassword'])->name('change-password');
-});

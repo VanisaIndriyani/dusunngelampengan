@@ -37,7 +37,7 @@
                                     <th width="100">Gambar</th>
                                     <th>Judul</th>
                                     <th>Deskripsi</th>
-                                    <th width="80">Icon</th>
+
                                     <th width="100">Status</th>
                                     <th width="150">Aksi</th>
                                 </tr>
@@ -51,7 +51,7 @@
                                     </td>
                                     <td>
                                         @if($item->gambar)
-                                            <img src="{{ asset('storage/kegiatan/' . $item->gambar) }}" 
+                                            <img src="{{ asset('storage/' . $item->gambar) }}" 
                                                  alt="{{ $item->judul }}" 
                                                  class="img-thumbnail" 
                                                  style="width: 60px; height: 60px; object-fit: cover;">
@@ -68,13 +68,7 @@
                                     <td>
                                         {{ Str::limit($item->deskripsi, 100) }}
                                     </td>
-                                    <td>
-                                        @if($item->icon)
-                                            <i class="{{ $item->icon }} fa-2x text-primary"></i>
-                                        @else
-                                            <span class="text-muted">-</span>
-                                        @endif
-                                    </td>
+
                                     <td>
                                         @if($item->status == 'aktif')
                                             <span class="badge bg-success">Aktif</span>

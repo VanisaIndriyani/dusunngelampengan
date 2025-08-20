@@ -51,19 +51,6 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label fw-bold">Icon</label>
-                                <div>
-                                    @if($kegiatan->icon)
-                                        <i class="{{ $kegiatan->icon }} fa-3x text-primary"></i>
-                                        <p class="text-muted mt-2">{{ $kegiatan->icon }}</p>
-                                    @else
-                                        <span class="text-muted">Tidak ada icon</span>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
                                 <label class="form-label fw-bold">Urutan Tampilan</label>
                                 <p class="form-control-plaintext">
                                     <span class="badge bg-primary fs-6">{{ $kegiatan->urutan }}</span>
@@ -108,7 +95,7 @@
                 </div>
                 <div class="card-body text-center">
                     @if($kegiatan->gambar)
-                        <img src="{{ asset('storage/kegiatan/' . $kegiatan->gambar) }}" 
+                        <img src="{{ asset('storage/' . $kegiatan->gambar) }}" 
                              alt="{{ $kegiatan->judul }}" 
                              class="img-fluid rounded" 
                              style="max-width: 100%; height: auto;">

@@ -12,7 +12,7 @@
                     <h5 class="mb-0"><i class="fas fa-plus me-2"></i>Tambah Video Baru</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.content.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.content.store') }}" method="POST">
                         @csrf
                         
                         <div class="mb-3">
@@ -24,32 +24,7 @@
                             @enderror
                         </div>
 
-                        <div class="mb-3">
-                            <label for="type" class="form-label">Tipe Konten <span class="text-danger">*</span></label>
-                            <input type="hidden" name="type" value="video">
-                            <input type="text" class="form-control" value="Video" readonly>
-                            <small class="text-muted">Otomatis diset ke tipe Video</small>
-                        </div>
 
-                        <div class="mb-3">
-                            <label for="content" class="form-label">Deskripsi Video <span class="text-danger">*</span></label>
-                            <textarea class="form-control @error('content') is-invalid @enderror" 
-                                      id="content" name="content" rows="4" required>{{ old('content') }}</textarea>
-                            <small class="text-muted">Deskripsi singkat tentang video yang akan ditampilkan</small>
-                            @error('content')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="image" class="form-label">Gambar</label>
-                            <input type="file" class="form-control @error('image') is-invalid @enderror" 
-                                   id="image" name="image" accept="image/*">
-                            <small class="text-muted">Format: JPG, PNG, GIF. Maksimal 2MB</small>
-                            @error('image')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
 
                         <div class="mb-3">
                             <label for="video_url" class="form-label">Link Video YouTube <span class="text-danger">*</span></label>

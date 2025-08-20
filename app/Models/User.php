@@ -22,8 +22,6 @@ class User extends Authenticatable
         'email',
         'password',
         'is_admin',
-        'role',
-        'rt_number',
         'phone',
         'address',
         'is_active',
@@ -59,45 +57,23 @@ class User extends Authenticatable
      */
     public function isAdmin(): bool
     {
-        return $this->role === 'admin' || $this->is_admin;
+        return $this->is_admin;
     }
 
     /**
-     * Check if user is RT
-     */
-    public function isRT(): bool
-    {
-        return $this->role === 'rt';
-    }
-
-    /**
-     * Get RT number
-     */
-    public function getRTNumber(): ?string
-    {
-        return $this->rt_number;
-    }
-
-    /**
-     * Get display name with RT number
+     * Get display name
      */
     public function getDisplayName(): string
     {
-        if ($this->isRT() && $this->rt_number) {
-            return $this->name . ' (' . $this->rt_number . ')';
-        }
         return $this->name;
     }
 
     /**
-     * Relationship with UMKM (RT can only see their own UMKM)
+     * Relationship with UMKM (admin can see all UMKM)
      */
     public function umkm()
     {
-        if ($this->isAdmin()) {
-            return $this->hasMany(UMKM::class);
-        }
-        return $this->hasMany(UMKM::class)->where('rt_number', $this->rt_number);
+        return $this->hasMany(UMKM::class);
     }
 
 }

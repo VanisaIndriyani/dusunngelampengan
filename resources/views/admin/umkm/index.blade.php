@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Manajemen UMKM')
-@section('subtitle', 'Kelola data UMKM Dusun Ngelampengan')
+@section('subtitle', 'Kelola data UMKM Dusun Nglampengan')
 
 @push('styles')
 <style>

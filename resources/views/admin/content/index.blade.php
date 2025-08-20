@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Manajemen Video')
-@section('subtitle', 'Kelola video YouTube website Dusun Ngelampengan')
+@section('subtitle', 'Kelola video YouTube website Dusun Nglampengan')
 
 @section('content')
 <div class="container-fluid">
@@ -10,9 +10,7 @@
             <h5 class="mb-1">Daftar Video</h5>
             <small class="text-muted">Kelola video YouTube website</small>
         </div>
-        <a href="{{ route('admin.content.create') }}" class="btn btn-admin">
-            <i class="fas fa-plus me-2"></i>Tambah Video
-        </a>
+      
     </div>
 
     <div class="admin-card">

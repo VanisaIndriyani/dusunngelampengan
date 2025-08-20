@@ -1294,11 +1294,16 @@
                 @forelse($kegiatan as $index => $item)
                 <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
                     <div class="feature-card h-100 p-4 p-lg-5 text-center hover-lift">
-                        <div class="feature-icon mb-3 mb-lg-4">
-                            @if($item->icon)
-                                <i class="{{ $item->icon }}"></i>
+                        <div class="feature-image mb-3 mb-lg-4">
+                            @if($item->gambar)
+                                <img src="{{ asset('storage/' . $item->gambar) }}" 
+                                     alt="{{ $item->judul }}" 
+                                     class="img-fluid rounded" 
+                                     style="width: 120px; height: 120px; object-fit: cover;">
                             @else
-                                <i class="fas fa-star"></i>
+                                <div class="feature-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
                             @endif
                         </div>
                         <h4 class="fw-bold text-dark mb-2 mb-lg-3">{{ $item->judul }}</h4>
@@ -2594,4 +2599,33 @@
             }
         }
     </script>
+
+    <style>
+        .feature-image img {
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        
+        .feature-icon i {
+            font-size: 3rem;
+            color: white;
+        }
+    </style>
 @endsection 

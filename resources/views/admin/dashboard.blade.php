@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Dashboard')
-@section('subtitle', 'Ringkasan data website Dusun Ngelampengan')
+@section('subtitle', 'Ringkasan data website Dusun Nglampengan')
 
 @section('content')
 <div class="container-fluid">
@@ -31,13 +31,7 @@
         </div>
     </div>
     
-    <div class="col-6 col-md-4">
-        <div class="stats-card">
-            <i class="fas fa-qrcode fa-lg fa-2x mb-3"></i>
-            <h3 class="stats-number mb-2">QR</h3>
-            <p class="mb-0">Website Access</p>
-        </div>
-    </div>
+
 
 
 
@@ -102,7 +96,64 @@
         </div>
     </div>
 
-        <!-- Quick Actions -->
+        <!-- User Activity Section -->
+    <div class="col-12">
+        <div class="admin-card">
+            <div class="admin-card-header">
+                <h5 class="mb-0"><i class="fas fa-user-clock me-2"></i>Aktivitas Terbaru - {{ Auth::user()->name }}</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="text-primary mb-3"><i class="fas fa-info-circle me-2"></i>Informasi Akun</h6>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="user-avatar me-3">
+                                {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+                            </div>
+                            <div>
+                                <strong>{{ Auth::user()->name }}</strong>
+                                <br>
+                                <span class="badge bg-primary">{{ ucfirst(Auth::user()->role) }}</span>
+                                <br>
+                                <small class="text-muted">{{ Auth::user()->email }}</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <small class="text-muted">
+                                <i class="fas fa-calendar me-1"></i>
+                                Bergabung sejak: {{ Auth::user()->created_at->format('d/m/Y H:i') }}
+                            </small>
+                        </div>
+                        <div class="mb-3">
+                            <small class="text-muted">
+                                <i class="fas fa-clock me-1"></i>
+                                Login terakhir: {{ Auth::user()->updated_at->format('d/m/Y H:i') }}
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-success mb-3"><i class="fas fa-chart-line me-2"></i>Statistik Aktivitas</h6>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="text-center p-3 bg-light rounded">
+                                    <div class="h4 text-primary mb-1">{{ $stats['total_umkm'] }}</div>
+                                    <small class="text-muted">UMKM Dikelola</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-center p-3 bg-light rounded">
+                                    <div class="h4 text-success mb-1">{{ $stats['total_content'] }}</div>
+                                    <small class="text-muted">Konten Dibuat</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
     <div class="col-12">
         <div class="admin-card">
             <div class="admin-card-header">
@@ -127,8 +178,18 @@
                         </a>
                     </div>
                     <div class="col-6 col-md-4">
-                        <a href="{{ route('qr-code') }}" target="_blank" class="btn btn-admin w-100 py-2">
-                            <i class="fas fa-qrcode me-1"></i><span class="d-none d-sm-inline">QR Code</span><span class="d-sm-none">QR</span>
+                        <a href="{{ route('admin.users.index') }}" class="btn btn-admin w-100 py-2">
+                            <i class="fas fa-users me-1"></i><span class="d-none d-sm-inline">Data User</span><span class="d-sm-none">User</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <a href="{{ route('admin.kegiatan.create') }}" class="btn btn-admin w-100 py-2">
+                            <i class="fas fa-plus me-1"></i><span class="d-none d-sm-inline">Tambah Kegiatan</span><span class="d-sm-none">Kegiatan</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <a href="{{ route('admin.kegiatan.index') }}" class="btn btn-admin w-100 py-2">
+                            <i class="fas fa-tasks me-1"></i><span class="d-none d-sm-inline">Kelola Kegiatan</span><span class="d-sm-none">Kegiatan</span>
                         </a>
                     </div>
 

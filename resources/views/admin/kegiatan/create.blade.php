@@ -56,26 +56,6 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="icon" class="form-label">Icon FontAwesome</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fas fa-icons"></i></span>
-                                                <input type="text" 
-                                                       class="form-control @error('icon') is-invalid @enderror" 
-                                                       id="icon" 
-                                                       name="icon" 
-                                                       value="{{ old('icon') }}" 
-                                                       placeholder="fas fa-star">
-                                            </div>
-                                            <small class="form-text text-muted">
-                                                Contoh: fas fa-star, fas fa-tree, fas fa-hands-helping
-                                            </small>
-                                            @error('icon')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
                                             <label for="urutan" class="form-label">Urutan</label>
                                             <input type="number" 
                                                    class="form-control @error('urutan') is-invalid @enderror" 
@@ -92,22 +72,25 @@
                                             @enderror
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="status" class="form-label">Status <span class="text-danger">*</span></label>
+                                            <select class="form-select @error('status') is-invalid @enderror" 
+                                                    id="status" 
+                                                    name="status" 
+                                                    required>
+                                                <option value="">Pilih Status</option>
+                                                <option value="aktif" {{ old('status') == 'aktif' ? 'selected' : '' }}>Aktif</option>
+                                                <option value="nonaktif" {{ old('status') == 'nonaktif' ? 'selected' : '' }}>Nonaktif</option>
+                                            </select>
+                                            @error('status')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="status" class="form-label">Status <span class="text-danger">*</span></label>
-                                    <select class="form-select @error('status') is-invalid @enderror" 
-                                            id="status" 
-                                            name="status" 
-                                            required>
-                                        <option value="">Pilih Status</option>
-                                        <option value="aktif" {{ old('status') == 'aktif' ? 'selected' : '' }}>Aktif</option>
-                                        <option value="nonaktif" {{ old('status') == 'nonaktif' ? 'selected' : '' }}>Nonaktif</option>
-                                    </select>
-                                    @error('status')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
+
                             </div>
 
                             <div class="col-md-4">
@@ -136,17 +119,7 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label">Preview Icon</label>
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <div id="iconPreview" class="mb-2">
-                                                <i class="fas fa-question-circle fa-3x text-muted"></i>
-                                            </div>
-                                            <small class="text-muted">Icon akan muncul di sini</small>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
 
@@ -198,18 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Icon preview
-    const iconInput = document.getElementById('icon');
-    const iconPreview = document.getElementById('iconPreview');
-    
-    iconInput.addEventListener('input', function() {
-        const iconClass = this.value.trim();
-        if (iconClass) {
-            iconPreview.innerHTML = `<i class="${iconClass} fa-3x text-primary"></i>`;
-        } else {
-            iconPreview.innerHTML = `<i class="fas fa-question-circle fa-3x text-muted"></i>`;
-        }
-    });
+
 });
 </script>
 @endsection

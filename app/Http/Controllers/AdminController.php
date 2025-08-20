@@ -155,20 +155,15 @@ class AdminController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'content' => 'required|string',
-            'type' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'video_url' => 'required|url|max:500',
         ]);
 
-        $data = $request->all();
-        
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images/content'), $imageName);
-            $data['image'] = 'images/content/' . $imageName;
-        }
+        $data = [
+            'title' => $request->title,
+            'content' => 'Video YouTube', // Default content
+            'type' => 'video', // Default type
+            'video_url' => $request->video_url,
+        ];
 
         Content::create($data);
 
@@ -187,24 +182,13 @@ class AdminController extends Controller
         
         $request->validate([
             'title' => 'required|string|max:255',
-            'content' => 'required|string',
-            'type' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'video_url' => 'required|url|max:500',
         ]);
 
-        $data = $request->all();
-        
-        if ($request->hasFile('image')) {
-            if ($content->image && file_exists(public_path($content->image))) {
-                unlink(public_path($content->image));
-            }
-            
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images/content'), $imageName);
-            $data['image'] = 'images/content/' . $imageName;
-        }
+        $data = [
+            'title' => $request->title,
+            'video_url' => $request->video_url,
+        ];
 
         $content->update($data);
 
@@ -232,21 +216,6 @@ class AdminController extends Controller
     public function settingsUpdate(Request $request)
     {
         $user = auth()->user();
-        
-        // Basic validation for website settings
-        $request->validate([
-            'site_name' => 'required|string|max:255',
-            'site_description' => 'required|string',
-            'contact_email' => 'required|email',
-            'contact_phone' => 'required|string',
-            'address' => 'required|string',
-            'facebook_url' => 'nullable|url',
-            'instagram_url' => 'nullable|url',
-            'youtube_url' => 'nullable|url',
-            'whatsapp_number' => 'nullable|string',
-            'meta_keywords' => 'nullable|string',
-            'meta_description' => 'nullable|string',
-        ]);
         
         // Admin account update validation
         if ($request->filled('admin_email') || $request->filled('new_password')) {
@@ -285,9 +254,92 @@ class AdminController extends Controller
             }
         }
         
-        // Update website settings (you can implement this with config files or database)
-        // For now, we'll just redirect with success message
+        return redirect()->route('admin.settings')->with('success', 'Pengaturan akun admin berhasil diperbarui!');
+    }
+
+    // User Management Methods
+    public function users(Request $request)
+    {
+        $query = User::query();
+
+        // Search functionality
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('name', 'like', '%' . $search . '%')
+                  ->orWhere('email', 'like', '%' . $search . '%');
+            });
+        }
+
+        $users = $query->latest()->paginate(10)->withQueryString();
+        return view('admin.users.index', compact('users'));
+    }
+
+    public function usersCreate()
+    {
+        return view('admin.users.create');
+    }
+
+    public function usersStore(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'is_admin' => true,
+        ]);
+
+        return redirect()->route('admin.users.index')->with('success', 'User berhasil ditambahkan!');
+    }
+
+    public function usersEdit($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.users.edit', compact('user'));
+    }
+
+    public function usersUpdate(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
         
-        return redirect()->route('admin.settings')->with('success', 'Pengaturan berhasil diperbarui!');
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'password' => 'nullable|string|min:8|confirmed',
+        ]);
+
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+        ];
+
+        // Update password if provided
+        if ($request->filled('password')) {
+            $data['password'] = Hash::make($request->password);
+        }
+
+        $user->update($data);
+
+        return redirect()->route('admin.users.index')->with('success', 'User berhasil diperbarui!');
+    }
+
+    public function usersDestroy($id)
+    {
+        $user = User::findOrFail($id);
+        
+        // Prevent deleting own account
+        if ($user->id === auth()->id()) {
+            return redirect()->route('admin.users.index')->with('error', 'Tidak dapat menghapus akun sendiri!');
+        }
+        
+        $user->delete();
+
+        return redirect()->route('admin.users.index')->with('success', 'User berhasil dihapus!');
     }
 } 

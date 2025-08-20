@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Dashboard') - Dusun Ngelampengan</title>
+    <title>@yield('title', 'Dashboard') - Dusun Nglampengan</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -399,6 +399,13 @@
             object-fit: cover;
         }
 
+        /* Dashboard User Avatar - Larger size */
+        .admin-card .user-avatar {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+        }
+
         .user-info {
             display: flex;
             flex-direction: column;
@@ -508,6 +515,140 @@
             border-bottom: 1px solid var(--gray-100);
         }
 
+        /* Admin Card Styles - Consistent across all admin pages */
+        .admin-card {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .admin-card-header {
+            background: var(--gray-50);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 20px 25px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .admin-card-header h5 {
+            color: var(--gray-800);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .admin-card .card-body {
+            padding: 25px;
+        }
+
+        /* Admin Button Styles */
+        .btn-admin {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            border: none;
+            color: var(--white);
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-admin:hover {
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Form Styles */
+        .form-label {
+            font-weight: 500;
+            color: var(--gray-800);
+            margin-bottom: 8px;
+        }
+
+        .form-control, .form-select {
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        /* Alert Styles */
+        .alert {
+            border-radius: 8px;
+            border: none;
+            padding: 16px 20px;
+        }
+
+        .alert-success {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+
+        .alert-danger {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        .alert-warning {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+
+        .alert-info {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        /* Badge Styles */
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-blue) !important;
+        }
+
+        .bg-success {
+            background-color: var(--success) !important;
+        }
+
+        .bg-warning {
+            background-color: var(--warning) !important;
+        }
+
+        .bg-danger {
+            background-color: var(--danger) !important;
+        }
+
+        .bg-info {
+            background-color: var(--info) !important;
+        }
+
+        /* Dashboard Stats Cards */
+        .bg-light {
+            background-color: var(--gray-100) !important;
+        }
+
+        .text-primary {
+            color: var(--primary-blue) !important;
+        }
+
+        .text-success {
+            color: var(--success) !important;
+        }
+
+        .text-muted {
+            color: var(--gray-600) !important;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .sidebar {
@@ -540,7 +681,7 @@
             <div class="sidebar-logo">
                 <i class="fas fa-tree" style="font-size: 2rem; color: var(--primary-blue);"></i>
             </div>
-            <h5 class="sidebar-title">Dusun Ngelampengan</h5>
+            <h5 class="sidebar-title">Dusun Nglampengan</h5>
             <p class="sidebar-subtitle">Admin Panel</p>
         </div>
         
@@ -552,15 +693,12 @@
                 </a>
             </div>
             
-            @if(Auth::user()->is_admin)
+            @if(Auth::user()->isAdmin())
                 <div class="nav-item">
                     <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                         <i class="fas fa-tachometer-alt nav-icon"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>
-                </div>
-                <div class="nav-item">
-                    
                 </div>
                 <div class="nav-item">
                     <a href="{{ route('admin.umkm.index') }}" class="nav-link {{ request()->routeIs('admin.umkm.*') ? 'active' : '' }}">
@@ -575,9 +713,15 @@
                     </a>
                 </div>
                 <div class="nav-item">
+                    <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
+                        <i class="fas fa-users nav-icon"></i>
+                        <span class="nav-text">Data Akun</span>
+                    </a>
+                </div>
+                <div class="nav-item">
                     <a href="{{ route('admin.content') }}" class="nav-link {{ request()->routeIs('admin.content.*') ? 'active' : '' }}">
                         <i class="fas fa-video nav-icon"></i>
-                                                        <span class="nav-text">Data Video</span>
+                        <span class="nav-text">Data Video</span>
                     </a>
                 </div>
                 <div class="nav-item">
@@ -600,14 +744,14 @@
                 </button>
                 <div>
                     <h4 class="mb-0">@yield('page-title', 'Dashboard')</h4>
-                    <small class="text-muted">@yield('page-subtitle', 'Selamat datang di admin panel Dusun Ngelampengan')</small>
+                    <small class="text-muted">@yield('page-subtitle', 'Selamat datang di admin panel Dusun Nglampengan')</small>
                 </div>
             </div>
             
             <div class="user-menu">
                 <div class="user-info">
                     <span class="user-name">{{ Auth::user()->name }}</span>
-                    <span class="user-role">Administrator</span>
+                    <span class="user-role">Admin</span>
                 </div>
                 <div class="user-avatar">
                     {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}

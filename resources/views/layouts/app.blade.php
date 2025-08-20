@@ -1547,7 +1547,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.dashboard') }}" target="_blank">
-                            <i class="fas fa-cog me-1"></i><span class="d-none d-lg-inline">Admin</span>
+                            <i class="fas fa-user me-1"></i><span class="d-none d-lg-inline"></span>
                         </a>
                     </li>
                 </ul>
