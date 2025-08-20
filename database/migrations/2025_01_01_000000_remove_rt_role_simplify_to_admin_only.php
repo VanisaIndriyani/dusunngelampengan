@@ -12,11 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            // Drop role column since we only need admin
-            $table->dropColumn('role');
+            // Drop role column if it exists
+            if (Schema::hasColumn('users', 'role')) {
+                $table->dropColumn('role');
+            }
             
-            // Drop RT-specific columns
-            $table->dropColumn('rt_number');
+            // Drop RT-specific columns if they exist
+            if (Schema::hasColumn('users', 'rt_number')) {
+                $table->dropColumn('rt_number');
+            }
             
             // Keep other useful columns
             // phone, address, is_active will remain
